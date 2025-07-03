@@ -2,6 +2,7 @@
 import socket,argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('-p','--send-size',dest='size',action='store',type=int,default=600)
+parser.add_argument('--mode', dest='mode', type=int, required=True, help="Test mode: 1-4")
 args,unknown = parser.parse_known_args()
 clientPort = 31000
 #this is the client MITM
@@ -10,35 +11,79 @@ serverPort = 31003
 def open_connection(socks=False):
     proxy_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     proxy_socket.connect(('127.0.0.1', clientPort))
+    
+    # socks5 handshake manually done
     if socks:
+        # 5,1,0 initialization packet - 5:socks5, 1: one auth method supported, 0: no auth
         proxy_socket.send(b'\x05\x01\x00')
+        # 5,1,0,1 - 5:socks5, 1: tcp/ip, 0:reserved, 1: address type is ipv4
         proxy_socket.send(b'\x05\x01\x00\x01')
-
+        # host dest - 127.0.0.1
         proxy_socket.send(b'\x7f\x00\x00\x01')
+        # host port - 2 bytes, big endian(network byte order =)
         proxy_socket.send((serverPort).to_bytes(2,'big'))
     return proxy_socket
 
+with open('client.txt', 'w') as f:
+    pass
+
+def log(msg):
+    with open('client.txt', 'a') as f:
+        f.write(f"{msg}\n")
+    print(msg)
+       
 #if socks5 proxy
 conn = open_connection(socks=True)
 #else
 import time
 count = 0
 conn.settimeout(10)
-s = set()
-for i in range(10):
 
-    conn.send(bytes(str(i),'ascii')*args.size)
+log(f"Mode {args.mode} - start experiment")
+
+if args.mode == 1:
+    # client sends 1 byte at t=1, then another at t=2
+    conn.send(b'A')
+    log("Sent 1 byte: A")
+    time.sleep(1)
+    conn.send(b'B')
+    log("Sent 1 byte: B")
+
+elif args.mode == 2:
+    # client sends 1 byte, waits for server to send 1 byte
+    conn.send(b'A')
+    log("Sent 1 byte: A")
     try:
-        dat = conn.recv(10000)
+        data = conn.recv(100)
+        if data:
+            log(f"Received {len(data)} byte: {data!r}")
     except socket.timeout:
-        continue
-    count += len(dat)
-    if not dat:
-        break
-    if dat:
-        s.add(chr(dat[0]))
-        with open('client.txt','w') as f:
-            f.write(f"{count} {s}\n") 
-    time.sleep(2)
+        log("Receive timeout")
+
+elif args.mode == 3:
+    # receive 1 byte from server, then send a byte
+    try:
+        data = conn.recv(1)
+        log(f"Received 1 byte: {data!r}")
+    except socket.timeout:
+        log("Receive timeout waiting for server")
+    time.sleep(1)
+    conn.send(b'B')
+    log("Sent 1 byte: B")
+
+elif args.mode == 4:
+    # receive two one-byte msg (t=1 and t=2)
+    try:
+        data1 = conn.recv(1)
+        log(f"Received 1st byte: {data1!r}")
+    except socket.timeout:
+        log("Timeout on 1st byte")
+    time.sleep(1)
+    try:
+        data2 = conn.recv(1)
+        log(f"Received 2nd byte: {data2!r}")
+    except socket.timeout:
+        log("Timeout on 2nd byte")
 
 conn.close()
+log("Connection closed")

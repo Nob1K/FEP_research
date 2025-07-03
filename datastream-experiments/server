@@ -2,23 +2,46 @@
 import socketserver,threading,datetime,socket,select,time,os,argparse,string
 parser = argparse.ArgumentParser()
 parser.add_argument('-p','--send-size',dest='size',action='store',type=int,default=700)
+parser.add_argument('--mode', dest='mode', type=int, required=True)
 args,unknown = parser.parse_known_args()
 bindPort = 31004
 with open('server.txt','w') as f:
     pass
 class handler(socketserver.BaseRequestHandler):
     def handle(self):
-        count = 0
-        s = set()
+        sock = self.request
+        if args.mode in [3, 4]:
+            # server send first byte
+            sock.send(b'X')
+            with open('server.txt', 'a') as f:
+                f.write(f"sent 1 byte: X\n")
+            if args.mode == 4:
+                # mode 4 server sends another byte
+                time.sleep(1)
+                sock.send(b'Y')
+                with open('server.txt', 'a') as f:
+                    f.write(f"sent 1 byte: Y\n")
+        rec = 0
         while True:
-                dat = self.request.recv(10000)
-                count += len(dat)
+            try:
+                dat = sock.recv(1)
                 if not dat:
                     return
-                s.add(chr(dat[0]))
-                with open('server.txt','w') as f:
-                    f.write(f"{count} {self.request.getsockname()[1]} {s}")
-                self.request.send(args.size*dat[:1])
+                rec += len(dat)
+                with open('server.txt', 'a') as f:
+                    f.write(f"recv {len(dat)} bytes: {dat!r}\n")
+                    f.flush()
+            except:
+                return
+
+            # mode 2: send one byte after receiving one from client
+            if args.mode == 2 and dat:
+                sock.send(b'Y')
+                with open('server.txt', 'a') as f:
+                    f.write(f"sent 1 byte: Y\n")
+            
+            if args.mode == 1 and rec >= 2:
+                break
 
                 
 if __name__ == '__main__':
