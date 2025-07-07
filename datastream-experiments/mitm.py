@@ -41,7 +41,7 @@ def log(*st):
 
 class handler(socketserver.BaseRequestHandler):
     def handle(self):
-        log("Received connection: {self.request}")
+        log(f"Received connection: {self.request}")
         handshook = 0
         outConn = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
         outConn.connect(('127.0.0.1',args.op))
