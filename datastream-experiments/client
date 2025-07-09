@@ -8,6 +8,17 @@ clientPort = 31000
 #this is the client MITM
 serverPort = 31003
 #this is the final server MITM that's targeted in the SOCKS request
+
+def recv_exact(sock, n):
+    data = b''
+    while len(data) < n:
+        chunk = sock.recv(n - len(data))
+        if not chunk:
+            raise ConnectionError("Socket closed before all bytes received")
+        data += chunk
+    return data
+
+
 def open_connection(socks=False):
     proxy_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     proxy_socket.connect(('127.0.0.1', clientPort))
@@ -16,12 +27,14 @@ def open_connection(socks=False):
     if socks:
         # 5,1,0 initialization packet - 5:socks5, 1: one auth method supported, 0: no auth
         proxy_socket.send(b'\x05\x01\x00')
+        method_reply = recv_exact(proxy_socket, 2)
         # 5,1,0,1 - 5:socks5, 1: tcp/ip, 0:reserved, 1: address type is ipv4
         proxy_socket.send(b'\x05\x01\x00\x01')
         # host dest - 127.0.0.1
         proxy_socket.send(b'\x7f\x00\x00\x01')
         # host port - 2 bytes, big endian(network byte order =)
         proxy_socket.send((serverPort).to_bytes(2,'big'))
+        conn_reply = recv_exact(proxy_socket, 10)
     return proxy_socket
 
 with open('client.txt', 'w') as f:
