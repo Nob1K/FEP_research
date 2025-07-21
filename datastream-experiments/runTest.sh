@@ -12,6 +12,9 @@ fi
 echo "Start test "$@" || $(date "+%s")">>mainLog.txt
 echo Starting test
 
+log_file=$1
+shift
+
 echo Starting server
 ./server "$@" &
 #listens on port 31004
@@ -39,9 +42,17 @@ echo Spawning client
 ./client "$@"
 sleep 2
 python3 extractFin.py -f
-echo Client Results:
-cat client.txt
-echo Server Results:
-cat server.txt
-rm client.txt
-rm server.txt
+
+echo "Results:" >> $log_file
+echo "clientProxyMITM:" >> $log_file
+cat clientProxyMITM.txt >> $log_file
+echo "mainMITM:" >> $log_file
+cat mainMITM.txt >> $log_file
+echo "serverProxyMITM:" >> $log_file
+cat serverProxyMITM.txt >> $log_file
+echo "Client:" >> $log_file
+cat client.txt >> $log_file
+echo "Server:" >> $log_file
+cat server.txt >> $log_file
+
+rm *.txt
