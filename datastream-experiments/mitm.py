@@ -98,7 +98,7 @@ if __name__ == '__main__':
     action = acMap[args.ac]
     if args.logFile:
         with open(args.logFile,'w') as f:
-            log(f'Starting MITM: {args.ip} -> {args.op}\n')
+            log(f'Starting MITM: {args.ip} -> {args.op}')
 
     socketserver.ThreadingTCPServer.allow_reuse_address = True
     with socketserver.ThreadingTCPServer(('127.0.0.1',args.ip),handler) as server:

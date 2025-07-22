@@ -41,18 +41,20 @@ sleep 2
 echo Spawning client
 ./client "$@"
 sleep 2
-python3 extractFin.py -f
 
-echo "Results:" >> $log_file
-echo "clientProxyMITM:" >> $log_file
+echo "Results extracted:" >> $log_file
+python3 extractFin.py -f >> $log_file
+echo -e "\nclientProxyMITM:" >> $log_file
 cat clientProxyMITM.txt >> $log_file
-echo "mainMITM:" >> $log_file
+echo -e "\nmainMITM:" >> $log_file
 cat mainMITM.txt >> $log_file
-echo "serverProxyMITM:" >> $log_file
+echo -e "\nserverProxyMITM:" >> $log_file
 cat serverProxyMITM.txt >> $log_file
-echo "Client:" >> $log_file
+echo -e "\nClient:" >> $log_file
 cat client.txt >> $log_file
-echo "Server:" >> $log_file
+echo -e "\nServer:" >> $log_file
 cat server.txt >> $log_file
 
-rm *.txt
+for file in *.txt; do
+  [ "$file" != "tshark.txt" ] && rm "$file"
+done
