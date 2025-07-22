@@ -1,6 +1,6 @@
 #!/bin/bash
 
-iterations=100
+iterations=3
 modes=(1 2 3 4)
 
 log_dir="./logs"
