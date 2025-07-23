@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import socketserver,threading,datetime,socket,select,time,os,argparse,string
 parser = argparse.ArgumentParser()
-parser.add_argument('-p','--send-size',dest='size',action='store',type=int,default=700)
+parser.add_argument('-p','--send-size',dest='size',action='store',type=int,default=1)
 parser.add_argument('--mode', dest='mode', type=int, required=True)
 args,unknown = parser.parse_known_args()
 bindPort = 31004
@@ -12,22 +12,22 @@ class handler(socketserver.BaseRequestHandler):
         sock = self.request
         if args.mode in [3, 4]:
             # server send first byte
-            sock.send(b'X')
+            sock.send(b'X' * args.size)
             with open('server.txt', 'a') as f:
-                f.write(f"sent 1 byte: X\n")
+                f.write(f"sent {args.size} byte of X\n")
             if args.mode == 4:
                 # mode 4 server sends another byte
                 time.sleep(1)
-                sock.send(b'Y')
+                sock.send(b'Y' * args.size)
                 with open('server.txt', 'a') as f:
-                    f.write(f"sent 1 byte: Y\n")
+                    f.write(f"sent {args.size} byte of Y\n")
         rec = 0
         while True:
             try:
-                dat = sock.recv(1)
+                dat = sock.recv(args.size)
                 if not dat:
                     return
-                rec += len(dat)
+                rec += 1
                 with open('server.txt', 'a') as f:
                     f.write(f"recv {len(dat)} bytes: {dat!r}\n")
                     f.flush()
@@ -36,9 +36,9 @@ class handler(socketserver.BaseRequestHandler):
 
             # mode 2: send one byte after receiving one from client
             if args.mode == 2 and dat:
-                sock.send(b'Y')
+                sock.send(b'Y' * args.size)
                 with open('server.txt', 'a') as f:
-                    f.write(f"sent 1 byte: Y\n")
+                    f.write(f"sent {args.size} byte of Y\n")
             
             if args.mode == 1 and rec >= 2:
                 break

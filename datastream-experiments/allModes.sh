@@ -2,32 +2,36 @@
 
 iterations=3
 modes=(1 2 3 4)
+sizes=(1 2 3)
 
 log_dir="./logs"
 mkdir -p $log_dir
 
 for mode in "${modes[@]}"
 do
-    echo "Running Mode $mode"
-    
-    log_file="$log_dir/mode${mode}.log"
-
-    # empty before appending
-    > $log_file
-
-    for i in $(seq 1 $iterations)
+    for size in "${sizes[@]}"
     do
-        timestamp=$(date "+%Y%m%d-%H%M%S")
-        
-        echo "Starting Iteration $i for Mode $mode at $timestamp" >> $log_file
+        echo "Running mode $mode with size $size"
 
-        ./runTest.sh $log_file --mode $mode
+        log_file="$log_dir/mode${mode}_size${size}.log"
 
-        echo "Completed Iteration $i for Mode $mode at $timestamp" >> $log_file
-        echo "----------------------------------------" >> $log_file
+        # empty before appending
+        > $log_file
+
+        for i in $(seq 1 $iterations)
+        do
+            timestamp=$(date "+%Y%m%d-%H%M%S")
+
+            echo "Starting iteration $i for mode $mode with msg size $size at $timestamp" >> $log_file
+
+            ./runTest.sh $log_file --mode $mode --send-size $size
+
+            echo "Completed iteration $i for mode $mode with msg size $size at $timestamp" >> $log_file
+            echo "----------------------------------------" >> $log_file
+        done
+
+        echo "All iterations for mode $mode with size $size completed. Logs saved to: $log_file"
     done
-
-    echo "All Iterations for Mode $mode completed. Logs saved to: $log_file"
 done
 
-echo "All tests completed."
+echo "All tests completed"

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import socket,argparse
 parser = argparse.ArgumentParser()
-parser.add_argument('-p','--send-size',dest='size',action='store',type=int,default=600)
+parser.add_argument('-p','--send-size',dest='size',action='store',type=int,default=1)
 parser.add_argument('--mode', dest='mode', type=int, required=True, help="Test mode: 1-4")
 args,unknown = parser.parse_known_args()
 clientPort = 31000
@@ -56,18 +56,18 @@ log(f"Mode {args.mode} - start experiment")
 
 if args.mode == 1:
     # client sends 1 byte at t=1, then another at t=2
-    conn.send(b'A')
-    log("Sent 1 byte: A")
+    conn.send(b'A' * args.size)
+    log(f"Sent {args.size} byte of A")
     time.sleep(1)
-    conn.send(b'B')
-    log("Sent 1 byte: B")
+    conn.send(b'B' * args.size)
+    log(f"Sent {args.size} byte of B")
 
 elif args.mode == 2:
     # client sends 1 byte, waits for server to send 1 byte
-    conn.send(b'A')
-    log("Sent 1 byte: A")
+    conn.send(b'A' * args.size)
+    log(f"Sent {args.size} byte of A")
     try:
-        data = conn.recv(100)
+        data = conn.recv(args.size)
         if data:
             log(f"Received {len(data)} byte: {data!r}")
     except socket.timeout:
@@ -76,25 +76,25 @@ elif args.mode == 2:
 elif args.mode == 3:
     # receive 1 byte from server, then send a byte
     try:
-        data = conn.recv(1)
-        log(f"Received 1 byte: {data!r}")
+        data = conn.recv(args.size)
+        log(f"Received {args.size} byte: {data!r}")
     except socket.timeout:
         log("Receive timeout waiting for server")
     time.sleep(1)
-    conn.send(b'B')
-    log("Sent 1 byte: B")
+    conn.send(b'B' * args.size)
+    log(f"Sent {args.size} byte of B")
 
 elif args.mode == 4:
     # receive two one-byte msg (t=1 and t=2)
     try:
-        data1 = conn.recv(1)
-        log(f"Received 1st byte: {data1!r}")
+        data1 = conn.recv(args.size)
+        log(f"Received 1st {args.size} byte: {data1!r}")
     except socket.timeout:
         log("Timeout on 1st byte")
     time.sleep(1)
     try:
-        data2 = conn.recv(1)
-        log(f"Received 2nd byte: {data2!r}")
+        data2 = conn.recv(args.size)
+        log(f"Received 2nd {args.size} byte: {data2!r}")
     except socket.timeout:
         log("Timeout on 2nd byte")
 
