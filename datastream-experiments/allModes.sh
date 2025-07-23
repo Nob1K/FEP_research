@@ -1,8 +1,8 @@
 #!/bin/bash
 
-iterations=3
+iterations=20
 modes=(1 2 3 4)
-sizes=(1 2 3)
+sizes=(1 2 5 8)
 
 log_dir="./logs"
 mkdir -p $log_dir
