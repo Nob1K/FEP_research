@@ -1,0 +1,12 @@
+#!/bin/bash
+# Starts the Shadowsocks server proxy
+# Listens on port 10086, forwards to 31003(routes automatically)
+
+echo "Starting Shadowsocks server proxy (ss-server) on 127.0.0.1:10086"
+ss-server \
+  -s 127.0.0.1 \
+  -p 10086 \
+  -k password123 \
+  -m chacha20-ietf-poly1305 \
+  -u \
+  > serverProxy.txt 2>&1

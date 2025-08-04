@@ -1,0 +1,14 @@
+#!/bin/bash
+# Starts the Shadowsocks client proxy
+# Listens on port 31001 and forwards to 10086 (listens to client mitm and sends to main mitm)
+
+echo "Starting Shadowsocks client proxy (ss-local) on 127.0.0.1:31001 forwarding to 127.0.0.1:31002(mitm)"
+
+ss-local \
+  -s 127.0.0.1 \
+  -p 31002 \
+  -l 31001 \
+  -k password123 \
+  -m chacha20-ietf-poly1305 \
+  -u \
+  > clientProxy.txt 2>&1
