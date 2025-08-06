@@ -30,7 +30,7 @@ echo Starting mitm
 python3 mitm.py -i 31002 -o 10086 -F mainMITM.txt  "$@"  &
 #passes client proxy (pointing to 31002) to server proxy (listening on 10086)
 echo Starting clientProxy
-./client-prox-obfs4 >clientProxy.txt &
+./client-proxy-obfs4 >clientProxy.txt &
 #should be listening on 31001, connecting to 31002
 echo Starting Clientproxymitm
 python3 mitm.py -i 31000 -o 31001 -F clientProxyMITM.txt &
