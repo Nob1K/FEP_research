@@ -22,7 +22,7 @@ echo Starting servermitm
 python3 mitm.py -i 31003 -o 31004 -F serverProxyMITM.txt &
 #passes serverProxy (31003) -> Server (31004)
 echo Starting serverproxy
-./server-proxy >serverProxy.txt &
+./server-proxy-obfs4 >serverProxy.txt &
 #should be configured to listen on port 10086, and connect to 31003 (if needed, typically determined by the client)
 
 
@@ -30,7 +30,7 @@ echo Starting mitm
 python3 mitm.py -i 31002 -o 10086 -F mainMITM.txt  "$@"  &
 #passes client proxy (pointing to 31002) to server proxy (listening on 10086)
 echo Starting clientProxy
-./client-proxy >clientProxy.txt &
+./client-prox-obfs4 >clientProxy.txt &
 #should be listening on 31001, connecting to 31002
 echo Starting Clientproxymitm
 python3 mitm.py -i 31000 -o 31001 -F clientProxyMITM.txt &
