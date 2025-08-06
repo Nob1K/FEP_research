@@ -1,6 +1,6 @@
 #!/bin/bash
 
-iterations=20
+iterations=15
 modes=(1 2 3 4)
 sizes=(1 2 5 8)
 
@@ -24,7 +24,7 @@ do
 
             echo "Starting iteration $i for mode $mode with msg size $size at $timestamp" >> $log_file
 
-            ./runTest.sh $log_file --mode $mode --send-size $size
+            ./runTest.sh $log_file --mode $mode --send-size $size --no-socks
 
             echo "Completed iteration $i for mode $mode with msg size $size at $timestamp" >> $log_file
             echo "----------------------------------------" >> $log_file
