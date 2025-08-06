@@ -3,17 +3,16 @@ wait_for_port() {
   local host=$1
   local port=$2
   local timeout=${3:-10}
-  python3 -c "
-import socket, time
-deadline = time.time() + $timeout
-while time.time() < deadline:
-    try:
-        with socket.create_connection((\"$host\", $port), timeout=0.5):
-            exit(0)
-    except:
-        time.sleep(0.1)
-exit(1)
-"
+  echo "Waiting for $host:$port..."
+  for ((i=0; i<$timeout*10; i++)); do
+    if nc -z "$host" "$port"; then
+      echo "Port $port is open!"
+      return 0
+    fi
+    sleep 0.1
+  done
+  echo "Timeout waiting for $host:$port"
+  return 1
 }
 #do any kind of prelim setup/update binary with compiled version, etc
 echo Doing $@.....
