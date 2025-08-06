@@ -1,4 +1,20 @@
 #!/bin/bash
+wait_for_port() {
+  local host=$1
+  local port=$2
+  local timeout=${3:-10}
+  python3 -c "
+import socket, time
+deadline = time.time() + $timeout
+while time.time() < deadline:
+    try:
+        with socket.create_connection((\"$host\", $port), timeout=0.5):
+            exit(0)
+    except:
+        time.sleep(0.1)
+exit(1)
+"
+}
 #do any kind of prelim setup/update binary with compiled version, etc
 echo Doing $@.....
 #should be configured to kill old versions of the test
@@ -16,25 +32,32 @@ log_file=$1
 shift
 
 echo Starting server
-./server "$@" &
 #listens on port 31004
+./server "$@" &
 echo Starting servermitm
-python3 mitm.py -i 31003 -o 31004 -F serverProxyMITM.txt &
 #passes serverProxy (31003) -> Server (31004)
+python3 mitm.py -i 31003 -o 31004 -F serverProxyMITM.txt &
 echo Starting serverproxy
-./server-proxy-obfs4 >serverProxy.txt &
 #should be configured to listen on port 10086, and connect to 31003 (if needed, typically determined by the client)
+./server-proxy-obfs4 >serverProxy.txt &
+wait_for_port 127.0.0.1 10086 || {
+  echo "Server proxy did not start in time"; exit 1;
+}
 
 
 echo Starting mitm
-python3 mitm.py -i 31002 -o 10086 -F mainMITM.txt  "$@"  &
 #passes client proxy (pointing to 31002) to server proxy (listening on 10086)
+python3 mitm.py -i 31002 -o 10086 -F mainMITM.txt  "$@"  &
 echo Starting clientProxy
-./client-proxy-obfs4 >clientProxy.txt &
 #should be listening on 31001, connecting to 31002
+./client-proxy-obfs4 >clientProxy.txt &
+wait_for_port 127.0.0.1 31001 || {
+  echo "Client proxy did not start in time"; exit 1;
+}
 echo Starting Clientproxymitm
-python3 mitm.py -i 31000 -o 31001 -F clientProxyMITM.txt &
 #passes client (not listening) -> client proxy (listening on 31001)
+python3 mitm.py -i 31000 -o 31001 -F clientProxyMITM.txt &
+
 
 sleep 2
 #waiting for mitms to spin up
