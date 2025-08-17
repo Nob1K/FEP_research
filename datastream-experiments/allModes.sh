@@ -1,10 +1,10 @@
 #!/bin/bash
 
-iterations=13
+iterations=12
 modes=(1 2 3 4)
 sizes=(1 2 5 8)
 
-log_dir="./logs"
+log_dir="./logs_obfs4_iat1"
 mkdir -p $log_dir
 
 for mode in "${modes[@]}"
