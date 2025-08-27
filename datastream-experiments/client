@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import socket,argparse
+import socket, argparse, datetime
 parser = argparse.ArgumentParser()
 parser.add_argument('-p','--send-size',dest='size',action='store',type=int,default=1)
 parser.add_argument('--mode', dest='mode', type=int, required=True, help="Test mode: 1-4")
@@ -45,7 +45,8 @@ with open('client.txt', 'w') as f:
 
 def log(msg):
     with open('client.txt', 'a') as f:
-        f.write(f"{msg}\n")
+        current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+        f.write(f"time: {current_time}, {msg}\n")
     print(msg)
        
 #if socks5 proxy
@@ -72,7 +73,7 @@ elif args.mode == 2:
     try:
         data = conn.recv(args.size)
         if data:
-            log(f"Received {len(data)} byte: {data!r}")
+            log(f"Received {len(data)} bytes")
     except socket.timeout:
         log("Receive timeout")
 
@@ -80,7 +81,7 @@ elif args.mode == 3:
     # receive 1 byte from server, then send a byte
     try:
         data = conn.recv(args.size)
-        log(f"Received {args.size} byte: {data!r}")
+        log(f"Received {args.size} bytes")
     except socket.timeout:
         log("Receive timeout waiting for server")
     time.sleep(1)
@@ -91,15 +92,14 @@ elif args.mode == 4:
     # receive two one-byte msg (t=1 and t=2)
     try:
         data1 = conn.recv(args.size)
-        log(f"Received 1st {args.size} byte: {data1!r}")
+        log(f"Received 1st {args.size} bytes")
     except socket.timeout:
-        log("Timeout on 1st byte")
-    time.sleep(1)
+        log("Timeout on 1st bytes")
     try:
         data2 = conn.recv(args.size)
-        log(f"Received 2nd {args.size} byte: {data2!r}")
+        log(f"Received 2nd {args.size} bytes")
     except socket.timeout:
-        log("Timeout on 2nd byte")
+        log("Timeout on 2nd bytes")
 
 conn.close()
 log("Connection closed")

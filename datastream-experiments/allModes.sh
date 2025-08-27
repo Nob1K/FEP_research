@@ -2,9 +2,9 @@
 
 iterations=12
 modes=(1 2 3 4)
-sizes=(1 2 5 8)
+sizes=(1 10 500 1800)
 
-log_dir="./logs_obfs4_iat1"
+log_dir="./logs_obfs4_iat0"
 mkdir -p $log_dir
 
 for mode in "${modes[@]}"

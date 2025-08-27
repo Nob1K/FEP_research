@@ -57,7 +57,8 @@ class handler(socketserver.BaseRequestHandler):
             except:
                 log(f'Connection closed from (apparently) {curDir}')
                 return
-            log('<-' if curDir == 'in' else '->', f'({len(dat)}) byte', f'{dat!r}' if len(dat) < 100 else '', f'Source Port: {self.request.getsockname()[1]}', f'Target Port: {outConn.getsockname()[1]}', f'Timestamp: {time.time()}')
+            current_time = datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S.%f')
+            log('<-' if curDir == 'in' else '->', f'({len(dat)}) byte', f'{dat!r}' if len(dat) < 100 else '', f'Source Port: {self.request.getsockname()[1]}', f'Target Port: {outConn.getsockname()[1]}', f'Timestamp: {current_time}')
             if args.direction == curDir:
                 handshook += 1
                 

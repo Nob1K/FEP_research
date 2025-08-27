@@ -6,7 +6,7 @@ wait_for_port() {
   echo "Waiting for $host:$port..."
   for ((i=0; i<$timeout*10; i++)); do
     if nc -z "$host" "$port"; then
-      echo "Port $port is open!"
+      echo "port $port is open"
       return 0
     fi
     sleep 0.1
