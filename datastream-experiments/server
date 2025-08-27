@@ -35,7 +35,7 @@ class handler(socketserver.BaseRequestHandler):
                     return
                 rec += 1
                 with open('server.txt', 'a') as f:
-                    f.write(f"time: {timestamp()}, recv {len(dat)} bytes, last byte content: {dat[-1]!r}\n")
+                    f.write(f"time: {timestamp()}, recv {len(dat)} bytes, last byte content: {dat[-1]}\n")
                     f.flush()
             except:
                 return
