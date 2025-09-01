@@ -71,7 +71,7 @@ elif args.mode == 2:
     conn.send(b'A' * args.size)
     log(f"Sent {args.size} byte of A")
     try:
-        data = conn.recv(args.size)
+        data = recv_exact(conn, args.size)
         if data:
             log(f"Received {len(data)} bytes, last byte content: {data[-1]}")
     except socket.timeout:
@@ -80,7 +80,7 @@ elif args.mode == 2:
 elif args.mode == 3:
     # receive 1 byte from server, then send a byte
     try:
-        data = conn.recv(args.size)
+        data = recv_exact(conn, args.size)
         log(f"Received {args.size} bytes, last byte content: {data[-1]}")
     except socket.timeout:
         log("Receive timeout waiting for server")
@@ -91,13 +91,13 @@ elif args.mode == 3:
 elif args.mode == 4:
     # receive two one-byte msg (t=1 and t=2)
     try:
-        data1 = conn.recv(args.size)
+        data1 = recv_exact(conn, args.size)
         log(f"Received 1st {args.size} bytes, last byte content: {data1[-1]}")
     except socket.timeout:
         log("Timeout on 1st bytes")
     time.sleep(0.5)
     try:
-        data2 = conn.recv(args.size)
+        data2 = recv_exact(conn, args.size)
         log(f"Received 2nd {args.size} bytes, last byte content: {data2[-1]}")
     except socket.timeout:
         log("Timeout on 2nd bytes")

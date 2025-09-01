@@ -6,6 +6,15 @@ parser.add_argument('--mode', dest='mode', type=int, required=True)
 args,unknown = parser.parse_known_args()
 bindPort = 31004
 
+def recv_exact(sock, n):
+    data = b''
+    while len(data) < n:
+        chunk = sock.recv(n - len(data))
+        if not chunk:
+            raise ConnectionError("Socket closed before all bytes received")
+        data += chunk
+    return data
+
 def timestamp():
     return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
 
@@ -30,7 +39,7 @@ class handler(socketserver.BaseRequestHandler):
         rec = 0
         while True:
             try:
-                dat = sock.recv(args.size)
+                dat = recv_exact(sock, args.size)
                 if not dat:
                     return
                 rec += 1
