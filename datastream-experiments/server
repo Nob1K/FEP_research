@@ -3,7 +3,7 @@ import socketserver,threading,datetime,socket,select,time,os,argparse,string
 parser = argparse.ArgumentParser()
 parser.add_argument('-p','--send-size',dest='size',action='store',type=int,default=1)
 parser.add_argument('--mode', dest='mode', type=int, required=True)
-parser.add_argument('-nm', '--num-messages', dest='nm', action='store', type=int, default=1)
+parser.add_argument('--num-messages', dest='nm', action='store', type=int, default=1)
 args,unknown = parser.parse_known_args()
 bindPort = 31004
 
@@ -37,7 +37,6 @@ class handler(socketserver.BaseRequestHandler):
                 log(f"Iteration: {i+1}")
                 sock.send(b'X' * args.size)
                 log(f"sent {args.size} byte of X")
-                    f.flush()
                 if args.mode == 4:
                     # mode 4 server sends another msg
                     time.sleep(0.5)
