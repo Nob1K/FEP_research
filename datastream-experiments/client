@@ -5,6 +5,7 @@ parser.add_argument('-p','--send-size',dest='size',action='store',type=int,defau
 parser.add_argument('--mode', dest='mode', type=int, required=True, help="Test mode: 1-4")
 parser.add_argument('--socks', action='store_true', help="use socks5 proxy")
 parser.add_argument('--no-socks', dest='socks', action='store_false', help="disable socks5 proxy")
+parser.add_argument('-nm', '--num-messages', dest='nm', action='store', type=int, default=1)
 parser.set_defaults(socks=True)
 args,unknown = parser.parse_known_args()
 clientPort = 31000
@@ -59,48 +60,66 @@ conn.settimeout(10)
 log(f"Mode {args.mode} - start experiment")
 
 if args.mode == 1:
-    # client sends 1 byte at t=1, then another at t=2
-    conn.send(b'A' * args.size)
-    log(f"Sent {args.size} byte of A")
-    time.sleep(1)
-    conn.send(b'B' * args.size)
-    log(f"Sent {args.size} byte of B")
+    # client sends 2 messages at t=1, then another 2 messages at t=2
+    for i in range(args.nm):
+        log(f"Iteration: {i+1}")
+        conn.send(b'A' * args.size)
+        log(f"Sent {args.size} byte of A")
+        time.sleep(0.5)
+        conn.send(b'B' * args.size)
+        log(f"Sent {args.size} byte of B")
+        time.sleep(0.5)
 
 elif args.mode == 2:
-    # client sends 1 byte, waits for server to send 1 byte
-    conn.send(b'A' * args.size)
-    log(f"Sent {args.size} byte of A")
+    # client sends args.nm messages, waits for server to send args.nm messages back
+    for i in range(args.nm):
+        log(f"Iteration: {i+1}")
+        conn.send(b'A' * args.size)
+        log(f"Sent {args.size} byte of A")
+        time.sleep(0.5)
     try:
-        data = recv_exact(conn, args.size)
-        if data:
-            log(f"Received {len(data)} bytes, last byte content: {data[-1]}")
+        for i in range(args.nm):
+            log(f"Iteration: {i+1}")
+            data = recv_exact(conn, args.size)
+            if data:
+                log(f"Received {len(data)} bytes, last byte content: {data[-1]}")
+            time.sleep(0.5)
     except socket.timeout:
         log("Receive timeout")
 
 elif args.mode == 3:
-    # receive 1 byte from server, then send a byte
+    # receive args.nm messages from server, then send args.nm messages back
     try:
-        data = recv_exact(conn, args.size)
-        log(f"Received {args.size} bytes, last byte content: {data[-1]}")
+        for i in range(args.nm):
+            log(f"Iteration: {i+1}")
+            data = recv_exact(conn, args.size)
+            log(f"Received {args.size} bytes, last byte content: {data[-1]}")
+            time.sleep(0.5)
     except socket.timeout:
         log("Receive timeout waiting for server")
-    time.sleep(1)
-    conn.send(b'B' * args.size)
-    log(f"Sent {args.size} byte of B")
+    time.sleep(0.5)
+    for i in range(args.nm):
+        log(f"Iteration: {i+1}")
+        conn.send(b'B' * args.size)
+        log(f"Sent {args.size} byte of B")
+        time.sleep(0.5)
 
 elif args.mode == 4:
-    # receive two one-byte msg (t=1 and t=2)
-    try:
-        data1 = recv_exact(conn, args.size)
-        log(f"Received 1st {args.size} bytes, last byte content: {data1[-1]}")
-    except socket.timeout:
-        log("Timeout on 1st bytes")
-    time.sleep(0.5)
-    try:
-        data2 = recv_exact(conn, args.size)
-        log(f"Received 2nd {args.size} bytes, last byte content: {data2[-1]}")
-    except socket.timeout:
-        log("Timeout on 2nd bytes")
+    # receive args.nm sets of two messages
+    for i in range(args.nm):
+        log(f"Iteration: {i+1}")
+        try:
+            data1 = recv_exact(conn, args.size)
+            log(f"Received 1st {args.size} bytes, last byte content: {data1[-1]}")
+        except socket.timeout:
+            log("Timeout on 1st message")
+        time.sleep(0.5)
+        try:
+            data2 = recv_exact(conn, args.size)
+            log(f"Received 2nd {args.size} bytes, last byte content: {data2[-1]}")
+        except socket.timeout:
+            log("Timeout on 2nd message")
+        time.sleep(0.5)
 
 conn.close()
 log("Connection closed")

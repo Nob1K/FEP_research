@@ -3,6 +3,7 @@ import socketserver,threading,datetime,socket,select,time,os,argparse,string
 parser = argparse.ArgumentParser()
 parser.add_argument('-p','--send-size',dest='size',action='store',type=int,default=1)
 parser.add_argument('--mode', dest='mode', type=int, required=True)
+parser.add_argument('-nm', '--num-messages', dest='nm', action='store', type=int, default=1)
 args,unknown = parser.parse_known_args()
 bindPort = 31004
 
@@ -18,50 +19,57 @@ def recv_exact(sock, n):
 def timestamp():
     return datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
 
+def log(msg):
+    with open('server.txt', 'a') as f:
+        f.write(f"time: {timestamp()}, {msg}\n")
+        f.flush()
+    print(msg)
+
 with open('server.txt','w') as f:
     pass
+
 class handler(socketserver.BaseRequestHandler):
     def handle(self):
         sock = self.request
         if args.mode in [3, 4]:
-            # server send first byte
-            sock.send(b'X' * args.size)
-            with open('server.txt', 'a') as f:
-                f.write(f"time: {timestamp()}, sent {args.size} byte of X\n")
-                f.flush()
-            if args.mode == 4:
-                # mode 4 server sends another byte
-                time.sleep(1)
-                sock.send(b'Y' * args.size)
-                with open('server.txt', 'a') as f:
-                    f.write(f"time: {timestamp()}, sent {args.size} byte of Y\n")
+            # server send first msg
+            for i in range(args.nm):
+                log(f"Iteration: {i+1}")
+                sock.send(b'X' * args.size)
+                log(f"sent {args.size} byte of X")
                     f.flush()
+                if args.mode == 4:
+                    # mode 4 server sends another msg
+                    time.sleep(0.5)
+                    sock.send(b'Y' * args.size)
+                    log(f"sent {args.size} byte of Y")
+                time.sleep(0.5)
         rec = 0
-        while True:
+        while args.mode in [1, 2, 3]:
             try:
                 dat = recv_exact(sock, args.size)
                 if not dat:
                     return
                 rec += 1
-                with open('server.txt', 'a') as f:
-                    f.write(f"time: {timestamp()}, recv {len(dat)} bytes, last byte content: {dat[-1]}\n")
-                    f.flush()
+                log(f"recv {len(dat)} bytes, last byte content: {dat[-1]}")
+                time.sleep(0.5)
             except:
                 return
 
             # mode 2: send one byte after receiving one from client
-            if args.mode == 2 and dat:
-                time.sleep(1)
-                sock.send(b'Y' * args.size)
-                with open('server.txt', 'a') as f:
-                    f.write(f"time: {timestamp()}, sent {args.size} byte of Y\n")
-                    f.flush()
+            if args.mode == 2 and rec == args.nm:
+                for i in range(args.nm):
+                    sock.send(b'Y' * args.size)
+                    log(f"sent {args.size} byte of Y")
+                    time.sleep(0.5)
             
-            if args.mode ==3 and rec >= 1:
+            if args.mode == 3 and rec >= args.nm:
                 break
             
-            if args.mode == 1 and rec >= 2:
+            if args.mode == 1 and rec >= (args.nm * 2):
                 break
+            
+            
 
                 
 if __name__ == '__main__':
