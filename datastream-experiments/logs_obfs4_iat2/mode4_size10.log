@@ -1,735 +1,921 @@
-Starting iteration 1 for mode 4 with msg size 10 at 20250901-182250
+Starting iteration 1 for mode 4 with msg size 10 at 20250907-234000
 Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 276
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 40
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 333
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 50
 	Terminated by RST: SERVERPROXY -> MITM
 
 
 clientProxyMITM:
 Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 43032)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 43730
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 43730 Timestamp: 2025-09-01 18:22:55.165250
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 43730 Timestamp: 2025-09-01 18:22:56.166869
--> (0) byte b'' Source Port: 31000 Target Port: 43730 Timestamp: 2025-09-01 18:22:56.167435
-Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 45348)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 46944
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 46944 Timestamp: 2025-09-07 23:40:04.526252
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 46944 Timestamp: 2025-09-07 23:40:05.031257
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 46944 Timestamp: 2025-09-07 23:40:05.534135
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 46944 Timestamp: 2025-09-07 23:40:06.036985
+<- (0) byte b'' Source Port: 31000 Target Port: 46944 Timestamp: 2025-09-07 23:40:06.536477
+Connection closed from (apparently) in
 
 mainMITM:
 Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 50838)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 58914
--> (1963) byte  Source Port: 31002 Target Port: 58914 Timestamp: 2025-09-01 18:22:53.134232
-<- (311) byte  Source Port: 31002 Target Port: 58914 Timestamp: 2025-09-01 18:22:53.134782
--> (0) byte b'' Source Port: 31002 Target Port: 58914 Timestamp: 2025-09-01 18:22:53.135745
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 37160)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 34100
+-> (4527) byte  Source Port: 31002 Target Port: 34100 Timestamp: 2025-09-07 23:40:02.470477
+<- (5629) byte  Source Port: 31002 Target Port: 34100 Timestamp: 2025-09-07 23:40:02.471003
+-> (0) byte b'' Source Port: 31002 Target Port: 34100 Timestamp: 2025-09-07 23:40:02.471869
 Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 50840)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 58920
--> (1195) byte  Source Port: 31002 Target Port: 58920 Timestamp: 2025-09-01 18:22:55.163268
-<- (1605) byte  Source Port: 31002 Target Port: 58920 Timestamp: 2025-09-01 18:22:55.163795
-<- (1404) byte  Source Port: 31002 Target Port: 58920 Timestamp: 2025-09-01 18:22:55.164817
-<- (172) byte  Source Port: 31002 Target Port: 58920 Timestamp: 2025-09-01 18:22:56.166301
--> (0) byte b'' Source Port: 31002 Target Port: 58920 Timestamp: 2025-09-01 18:22:56.168228
-Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 37176)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 34106
+-> (7000) byte  Source Port: 31002 Target Port: 34106 Timestamp: 2025-09-07 23:40:04.522766
+<- (2562) byte  Source Port: 31002 Target Port: 34106 Timestamp: 2025-09-07 23:40:04.523854
+<- (720) byte  Source Port: 31002 Target Port: 34106 Timestamp: 2025-09-07 23:40:04.525516
+<- (212) byte  Source Port: 31002 Target Port: 34106 Timestamp: 2025-09-07 23:40:05.028999
+<- (686) byte  Source Port: 31002 Target Port: 34106 Timestamp: 2025-09-07 23:40:05.530652
+<- (1034) byte  Source Port: 31002 Target Port: 34106 Timestamp: 2025-09-07 23:40:06.034740
+<- (0) byte b'' Source Port: 31002 Target Port: 34106 Timestamp: 2025-09-07 23:40:06.535114
+Connection closed from (apparently) in
 
 serverProxyMITM:
 Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 58508)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 32966
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 32966 Timestamp: 2025-09-01 18:22:53.135890
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 36368)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 44482
+-> (0) byte b'' Source Port: 31003 Target Port: 44482 Timestamp: 2025-09-07 23:40:02.472183
 Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 58512)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 32968
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 32968 Timestamp: 2025-09-01 18:22:55.164583
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 32968 Timestamp: 2025-09-01 18:22:56.165815
--> (0) byte b'' Source Port: 31003 Target Port: 32968 Timestamp: 2025-09-01 18:22:56.168503
-Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 36372)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 44484
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 44484 Timestamp: 2025-09-07 23:40:04.525259
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 44484 Timestamp: 2025-09-07 23:40:05.027625
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 44484 Timestamp: 2025-09-07 23:40:05.529844
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 44484 Timestamp: 2025-09-07 23:40:06.032625
+<- (0) byte b'' Source Port: 31003 Target Port: 44484 Timestamp: 2025-09-07 23:40:06.534000
+Connection closed from (apparently) in
 
 Client:
-time: 2025-09-01 18:22:55.161228, Mode 4 - start experiment
-time: 2025-09-01 18:22:55.165379, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:22:56.167274, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:22:56.167425, Connection closed
+time: 2025-09-07 23:40:04.520212, Mode 4 - start experiment
+time: 2025-09-07 23:40:04.520356, Iteration: 1
+time: 2025-09-07 23:40:04.526528, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:05.031809, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:05.532912, Iteration: 2
+time: 2025-09-07 23:40:05.534669, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:06.037893, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:06.539407, Connection closed
 
 Server:
-time: 2025-09-01 18:22:53.135814, sent 10 byte of X
-time: 2025-09-01 18:22:54.140945, sent 10 byte of Y
-time: 2025-09-01 18:22:55.164575, sent 10 byte of X
-time: 2025-09-01 18:22:56.165861, sent 10 byte of Y
-Completed iteration 1 for mode 4 with msg size 10 at 20250901-182250
+time: 2025-09-07 23:40:02.472233, Iteration: 1
+time: 2025-09-07 23:40:02.472340, sent 10 byte of X
+time: 2025-09-07 23:40:04.524861, Iteration: 1
+time: 2025-09-07 23:40:04.525170, sent 10 byte of X
+time: 2025-09-07 23:40:05.027811, sent 10 byte of Y
+time: 2025-09-07 23:40:05.528771, Iteration: 2
+time: 2025-09-07 23:40:05.529631, sent 10 byte of X
+time: 2025-09-07 23:40:06.032852, sent 10 byte of Y
+Completed iteration 1 for mode 4 with msg size 10 at 20250907-234000
 ----------------------------------------
-Starting iteration 2 for mode 4 with msg size 10 at 20250901-182258
+Starting iteration 2 for mode 4 with msg size 10 at 20250907-234008
 Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 272
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 30
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 335
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 60
 	Terminated by RST: SERVERPROXY -> MITM
 
 
 clientProxyMITM:
 Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 50578)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 46128
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 46128 Timestamp: 2025-09-01 18:23:02.606113
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 46128 Timestamp: 2025-09-01 18:23:03.616620
--> (0) byte b'' Source Port: 31000 Target Port: 46128 Timestamp: 2025-09-01 18:23:03.617948
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 53496)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 40080
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 40080 Timestamp: 2025-09-07 23:40:12.979604
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 40080 Timestamp: 2025-09-07 23:40:13.484562
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 40080 Timestamp: 2025-09-07 23:40:13.985646
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 40080 Timestamp: 2025-09-07 23:40:14.487254
+-> (0) byte b'' Source Port: 31000 Target Port: 40080 Timestamp: 2025-09-07 23:40:14.989641
 Connection closed from (apparently) out
 
 mainMITM:
 Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 50842)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 58958
--> (7003) byte  Source Port: 31002 Target Port: 58958 Timestamp: 2025-09-01 18:23:00.541782
-<- (7720) byte  Source Port: 31002 Target Port: 58958 Timestamp: 2025-09-01 18:23:00.542434
--> (0) byte b'' Source Port: 31002 Target Port: 58958 Timestamp: 2025-09-01 18:23:00.542961
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 47206)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 40556
+-> (3076) byte  Source Port: 31002 Target Port: 40556 Timestamp: 2025-09-07 23:40:10.921994
+<- (5371) byte  Source Port: 31002 Target Port: 40556 Timestamp: 2025-09-07 23:40:10.922539
+-> (0) byte b'' Source Port: 31002 Target Port: 40556 Timestamp: 2025-09-07 23:40:10.923217
 Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 41036)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 45494
--> (5965) byte  Source Port: 31002 Target Port: 45494 Timestamp: 2025-09-01 18:23:02.602768
-<- (6601) byte  Source Port: 31002 Target Port: 45494 Timestamp: 2025-09-01 18:23:02.603674
-<- (843) byte  Source Port: 31002 Target Port: 45494 Timestamp: 2025-09-01 18:23:02.605341
-<- (1404) byte  Source Port: 31002 Target Port: 45494 Timestamp: 2025-09-01 18:23:03.615011
--> (0) byte b'' Source Port: 31002 Target Port: 45494 Timestamp: 2025-09-01 18:23:03.620568
-Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 47212)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 40572
+-> (4644) byte  Source Port: 31002 Target Port: 40572 Timestamp: 2025-09-07 23:40:12.976704
+<- (579) byte  Source Port: 31002 Target Port: 40572 Timestamp: 2025-09-07 23:40:12.977452
+<- (148) byte  Source Port: 31002 Target Port: 40572 Timestamp: 2025-09-07 23:40:12.979097
+<- (427) byte  Source Port: 31002 Target Port: 40572 Timestamp: 2025-09-07 23:40:13.482470
+<- (905) byte  Source Port: 31002 Target Port: 40572 Timestamp: 2025-09-07 23:40:13.984210
+<- (532) byte  Source Port: 31002 Target Port: 40572 Timestamp: 2025-09-07 23:40:14.485525
+<- (0) byte b'' Source Port: 31002 Target Port: 40572 Timestamp: 2025-09-07 23:40:14.987631
+Connection closed from (apparently) in
 
 serverProxyMITM:
 Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 58524)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 32984
--> (0) byte b'' Source Port: 31003 Target Port: 32984 Timestamp: 2025-09-01 18:23:00.543273
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 43382)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 45744
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 45744 Timestamp: 2025-09-07 23:40:10.923473
+-> (0) byte b'' Source Port: 31003 Target Port: 45744 Timestamp: 2025-09-07 23:40:10.923704
 Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 34772)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 54230
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 54230 Timestamp: 2025-09-01 18:23:02.604871
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 54230 Timestamp: 2025-09-01 18:23:03.613707
--> (0) byte b'' Source Port: 31003 Target Port: 54230 Timestamp: 2025-09-01 18:23:03.621675
-Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 43392)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 45752
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 45752 Timestamp: 2025-09-07 23:40:12.978611
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 45752 Timestamp: 2025-09-07 23:40:13.480726
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 45752 Timestamp: 2025-09-07 23:40:13.983387
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 45752 Timestamp: 2025-09-07 23:40:14.484422
+<- (0) byte b'' Source Port: 31003 Target Port: 45752 Timestamp: 2025-09-07 23:40:14.985811
+Connection closed from (apparently) in
 
 Client:
-time: 2025-09-01 18:23:02.598911, Mode 4 - start experiment
-time: 2025-09-01 18:23:02.606332, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:23:03.617494, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:23:03.617913, Connection closed
+time: 2025-09-07 23:40:12.972847, Mode 4 - start experiment
+time: 2025-09-07 23:40:12.972984, Iteration: 1
+time: 2025-09-07 23:40:12.979851, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:13.485237, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:13.986434, Iteration: 2
+time: 2025-09-07 23:40:13.986644, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:14.487980, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:14.989714, Connection closed
 
 Server:
-time: 2025-09-01 18:23:00.543366, sent 10 byte of X
-time: 2025-09-01 18:23:02.604894, sent 10 byte of X
-time: 2025-09-01 18:23:03.613872, sent 10 byte of Y
-Completed iteration 2 for mode 4 with msg size 10 at 20250901-182258
+time: 2025-09-07 23:40:10.923286, Iteration: 1
+time: 2025-09-07 23:40:10.923387, sent 10 byte of X
+time: 2025-09-07 23:40:11.426974, sent 10 byte of Y
+time: 2025-09-07 23:40:11.931196, Iteration: 2
+time: 2025-09-07 23:40:12.978438, Iteration: 1
+time: 2025-09-07 23:40:12.978554, sent 10 byte of X
+time: 2025-09-07 23:40:13.480826, sent 10 byte of Y
+time: 2025-09-07 23:40:13.982636, Iteration: 2
+time: 2025-09-07 23:40:13.983396, sent 10 byte of X
+time: 2025-09-07 23:40:14.484616, sent 10 byte of Y
+Completed iteration 2 for mode 4 with msg size 10 at 20250907-234008
 ----------------------------------------
-Starting iteration 3 for mode 4 with msg size 10 at 20250901-182305
+Starting iteration 3 for mode 4 with msg size 10 at 20250907-234017
 Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 273
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 40
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 336
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 60
 	Terminated by RST: SERVERPROXY -> MITM
 
 
 clientProxyMITM:
 Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 50592)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 46162
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 46162 Timestamp: 2025-09-01 18:23:10.039987
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 46162 Timestamp: 2025-09-01 18:23:11.052855
--> (0) byte b'' Source Port: 31000 Target Port: 46162 Timestamp: 2025-09-01 18:23:11.053992
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 40540)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 44654
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 44654 Timestamp: 2025-09-07 23:40:21.404465
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 44654 Timestamp: 2025-09-07 23:40:21.910265
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 44654 Timestamp: 2025-09-07 23:40:22.413746
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 44654 Timestamp: 2025-09-07 23:40:22.914620
+-> (0) byte b'' Source Port: 31000 Target Port: 44654 Timestamp: 2025-09-07 23:40:23.416441
 Connection closed from (apparently) out
 
 mainMITM:
 Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 41052)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 45518
--> (5532) byte  Source Port: 31002 Target Port: 45518 Timestamp: 2025-09-01 18:23:07.982916
-<- (7771) byte  Source Port: 31002 Target Port: 45518 Timestamp: 2025-09-01 18:23:07.983440
--> (0) byte b'' Source Port: 31002 Target Port: 45518 Timestamp: 2025-09-01 18:23:07.983964
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 47224)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 40590
+-> (7104) byte  Source Port: 31002 Target Port: 40590 Timestamp: 2025-09-07 23:40:19.348526
+<- (2185) byte  Source Port: 31002 Target Port: 40590 Timestamp: 2025-09-07 23:40:19.348935
+-> (0) byte b'' Source Port: 31002 Target Port: 40590 Timestamp: 2025-09-07 23:40:19.349905
 Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 41066)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 45526
--> (1368) byte  Source Port: 31002 Target Port: 45526 Timestamp: 2025-09-01 18:23:10.036509
-<- (7655) byte  Source Port: 31002 Target Port: 45526 Timestamp: 2025-09-01 18:23:10.037360
-<- (220) byte  Source Port: 31002 Target Port: 45526 Timestamp: 2025-09-01 18:23:10.039242
-<- (977) byte  Source Port: 31002 Target Port: 45526 Timestamp: 2025-09-01 18:23:11.050974
--> (0) byte b'' Source Port: 31002 Target Port: 45526 Timestamp: 2025-09-01 18:23:11.055534
-Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 40468)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 33198
+-> (3036) byte  Source Port: 31002 Target Port: 33198 Timestamp: 2025-09-07 23:40:21.400496
+<- (2186) byte  Source Port: 31002 Target Port: 33198 Timestamp: 2025-09-07 23:40:21.401604
+<- (1034) byte  Source Port: 31002 Target Port: 33198 Timestamp: 2025-09-07 23:40:21.403406
+<- (686) byte  Source Port: 31002 Target Port: 33198 Timestamp: 2025-09-07 23:40:21.907562
+<- (212) byte  Source Port: 31002 Target Port: 33198 Timestamp: 2025-09-07 23:40:22.411780
+<- (262) byte  Source Port: 31002 Target Port: 33198 Timestamp: 2025-09-07 23:40:22.912726
+<- (0) byte b'' Source Port: 31002 Target Port: 33198 Timestamp: 2025-09-07 23:40:23.415838
+Connection closed from (apparently) in
 
 serverProxyMITM:
 Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 34782)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 54242
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 54242 Timestamp: 2025-09-01 18:23:07.984333
--> (0) byte b'' Source Port: 31003 Target Port: 54242 Timestamp: 2025-09-01 18:23:07.984503
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 43402)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 45762
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 45762 Timestamp: 2025-09-07 23:40:19.349834
+-> (0) byte b'' Source Port: 31003 Target Port: 45762 Timestamp: 2025-09-07 23:40:19.352355
 Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 34792)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 54252
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 54252 Timestamp: 2025-09-01 18:23:10.038868
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 54252 Timestamp: 2025-09-01 18:23:11.049557
--> (0) byte b'' Source Port: 31003 Target Port: 54252 Timestamp: 2025-09-01 18:23:11.056725
-Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 57684)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 42076
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 42076 Timestamp: 2025-09-07 23:40:21.403196
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 42076 Timestamp: 2025-09-07 23:40:21.904879
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 42076 Timestamp: 2025-09-07 23:40:22.409878
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 42076 Timestamp: 2025-09-07 23:40:22.911483
+<- (0) byte b'' Source Port: 31003 Target Port: 42076 Timestamp: 2025-09-07 23:40:23.414161
+Connection closed from (apparently) in
 
 Client:
-time: 2025-09-01 18:23:10.031606, Mode 4 - start experiment
-time: 2025-09-01 18:23:10.040345, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:23:11.053644, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:23:11.053999, Connection closed
+time: 2025-09-07 23:40:21.396332, Mode 4 - start experiment
+time: 2025-09-07 23:40:21.396533, Iteration: 1
+time: 2025-09-07 23:40:21.404749, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:21.910979, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:22.412329, Iteration: 2
+time: 2025-09-07 23:40:22.414670, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:22.915470, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:23.416541, Connection closed
 
 Server:
-time: 2025-09-01 18:23:07.984337, sent 10 byte of X
-time: 2025-09-01 18:23:08.992935, sent 10 byte of Y
-time: 2025-09-01 18:23:10.038869, sent 10 byte of X
-time: 2025-09-01 18:23:11.049982, sent 10 byte of Y
-Completed iteration 3 for mode 4 with msg size 10 at 20250901-182305
+time: 2025-09-07 23:40:19.349710, Iteration: 1
+time: 2025-09-07 23:40:19.349830, sent 10 byte of X
+time: 2025-09-07 23:40:19.854967, sent 10 byte of Y
+time: 2025-09-07 23:40:20.359627, Iteration: 2
+time: 2025-09-07 23:40:21.402964, Iteration: 1
+time: 2025-09-07 23:40:21.403185, sent 10 byte of X
+time: 2025-09-07 23:40:21.905251, sent 10 byte of Y
+time: 2025-09-07 23:40:22.408786, Iteration: 2
+time: 2025-09-07 23:40:22.409503, sent 10 byte of X
+time: 2025-09-07 23:40:22.911668, sent 10 byte of Y
+Completed iteration 3 for mode 4 with msg size 10 at 20250907-234017
 ----------------------------------------
-Starting iteration 4 for mode 4 with msg size 10 at 20250901-182313
+Starting iteration 4 for mode 4 with msg size 10 at 20250907-234025
 Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 267
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 40
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 341
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 50
 	Terminated by RST: SERVERPROXY -> MITM
 
 
 clientProxyMITM:
 Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 52530)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 45282
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 45282 Timestamp: 2025-09-01 18:23:17.450385
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 45282 Timestamp: 2025-09-01 18:23:18.455159
--> (0) byte b'' Source Port: 31000 Target Port: 45282 Timestamp: 2025-09-01 18:23:18.456384
-Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 58162)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 57088
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 57088 Timestamp: 2025-09-07 23:40:29.843458
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 57088 Timestamp: 2025-09-07 23:40:30.347958
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 57088 Timestamp: 2025-09-07 23:40:30.849378
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 57088 Timestamp: 2025-09-07 23:40:31.351656
+<- (0) byte b'' Source Port: 31000 Target Port: 57088 Timestamp: 2025-09-07 23:40:31.853527
+Connection closed from (apparently) in
 
 mainMITM:
 Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 38984)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 53192
--> (8040) byte  Source Port: 31002 Target Port: 53192 Timestamp: 2025-09-01 18:23:15.412559
-<- (177) byte  Source Port: 31002 Target Port: 53192 Timestamp: 2025-09-01 18:23:15.413155
--> (0) byte b'' Source Port: 31002 Target Port: 53192 Timestamp: 2025-09-01 18:23:15.413900
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 40480)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 33212
+-> (376) byte  Source Port: 31002 Target Port: 33212 Timestamp: 2025-09-07 23:40:27.789671
+<- (2267) byte  Source Port: 31002 Target Port: 33212 Timestamp: 2025-09-07 23:40:27.790337
+-> (0) byte b'' Source Port: 31002 Target Port: 33212 Timestamp: 2025-09-07 23:40:27.790983
 Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 38998)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 53208
--> (8083) byte  Source Port: 31002 Target Port: 53208 Timestamp: 2025-09-01 18:23:17.446201
-<- (8084) byte  Source Port: 31002 Target Port: 53208 Timestamp: 2025-09-01 18:23:17.447494
-<- (170) byte  Source Port: 31002 Target Port: 53208 Timestamp: 2025-09-01 18:23:17.449780
-<- (87) byte b"\xe8\x1f\xdf4;\xd2\x85\xb8I\x9d \x9e\xad\x00\xae\x05\xdd\x89\x90\xa3\x05\xbf\x9c<=\xce\xcdJ\x0f\xab\x9e\x8a@bM\x0f#\xbe_*\xbb\xc5\xf0q\x87\x18\xd4\xde@\xa65f\x13\xcb.V11=\x81\xf6d)\xe9'l\x8d\n\x89;.X\x1c\xb1\x10a\xe7\x01\x8cD\xad^\x15`\n\t\x92" Source Port: 31002 Target Port: 53208 Timestamp: 2025-09-01 18:23:18.453576
--> (0) byte b'' Source Port: 31002 Target Port: 53208 Timestamp: 2025-09-01 18:23:18.457873
-Connection closed from (apparently) out
-
-serverProxyMITM:
-Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 36164)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 52530
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 52530 Timestamp: 2025-09-01 18:23:15.413879
--> (0) byte b'' Source Port: 31003 Target Port: 52530 Timestamp: 2025-09-01 18:23:15.414114
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 36176)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 52542
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 52542 Timestamp: 2025-09-01 18:23:17.449328
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 52542 Timestamp: 2025-09-01 18:23:18.452446
--> (0) byte b'' Source Port: 31003 Target Port: 52542 Timestamp: 2025-09-01 18:23:18.459608
-Connection closed from (apparently) out
-
-Client:
-time: 2025-09-01 18:23:17.441361, Mode 4 - start experiment
-time: 2025-09-01 18:23:17.450609, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:23:18.455825, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:23:18.456390, Connection closed
-
-Server:
-time: 2025-09-01 18:23:15.413787, sent 10 byte of X
-time: 2025-09-01 18:23:16.418384, sent 10 byte of Y
-time: 2025-09-01 18:23:17.449375, sent 10 byte of X
-time: 2025-09-01 18:23:18.452665, sent 10 byte of Y
-Completed iteration 4 for mode 4 with msg size 10 at 20250901-182313
-----------------------------------------
-Starting iteration 5 for mode 4 with msg size 10 at 20250901-182320
-Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 265
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 40
-	Terminated by RST: SERVERPROXY -> MITM
-
-
-clientProxyMITM:
-Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 45432)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 54790
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 54790 Timestamp: 2025-09-01 18:23:24.883801
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 54790 Timestamp: 2025-09-01 18:23:25.892277
--> (0) byte b'' Source Port: 31000 Target Port: 54790 Timestamp: 2025-09-01 18:23:25.893284
-Connection closed from (apparently) out
-
-mainMITM:
-Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 54932)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 52692
--> (4993) byte  Source Port: 31002 Target Port: 52692 Timestamp: 2025-09-01 18:23:22.826782
-<- (2261) byte  Source Port: 31002 Target Port: 52692 Timestamp: 2025-09-01 18:23:22.827481
--> (0) byte b'' Source Port: 31002 Target Port: 52692 Timestamp: 2025-09-01 18:23:22.828536
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 54948)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 52702
--> (2042) byte  Source Port: 31002 Target Port: 52702 Timestamp: 2025-09-01 18:23:24.880267
-<- (1433) byte  Source Port: 31002 Target Port: 52702 Timestamp: 2025-09-01 18:23:24.881067
-<- (1273) byte  Source Port: 31002 Target Port: 52702 Timestamp: 2025-09-01 18:23:24.882875
-<- (949) byte  Source Port: 31002 Target Port: 52702 Timestamp: 2025-09-01 18:23:25.890588
--> (0) byte b'' Source Port: 31002 Target Port: 52702 Timestamp: 2025-09-01 18:23:25.895256
-Connection closed from (apparently) out
-
-serverProxyMITM:
-Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 50584)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 35572
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 35572 Timestamp: 2025-09-01 18:23:22.828418
--> (0) byte b'' Source Port: 31003 Target Port: 35572 Timestamp: 2025-09-01 18:23:22.828777
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 50600)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 35576
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 35576 Timestamp: 2025-09-01 18:23:24.882445
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 35576 Timestamp: 2025-09-01 18:23:25.888915
--> (0) byte b'' Source Port: 31003 Target Port: 35576 Timestamp: 2025-09-01 18:23:25.896902
-Connection closed from (apparently) out
-
-Client:
-time: 2025-09-01 18:23:24.877310, Mode 4 - start experiment
-time: 2025-09-01 18:23:24.884200, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:23:25.892811, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:23:25.893375, Connection closed
-
-Server:
-time: 2025-09-01 18:23:22.828452, sent 10 byte of X
-time: 2025-09-01 18:23:23.831999, sent 10 byte of Y
-time: 2025-09-01 18:23:24.882431, sent 10 byte of X
-time: 2025-09-01 18:23:25.888965, sent 10 byte of Y
-Completed iteration 5 for mode 4 with msg size 10 at 20250901-182320
-----------------------------------------
-Starting iteration 6 for mode 4 with msg size 10 at 20250901-182328
-Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 266
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 40
-	Terminated by RST: SERVERPROXY -> MITM
-
-
-clientProxyMITM:
-Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 44832)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 57180
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 57180 Timestamp: 2025-09-01 18:23:32.316996
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 57180 Timestamp: 2025-09-01 18:23:33.330560
--> (0) byte b'' Source Port: 31000 Target Port: 57180 Timestamp: 2025-09-01 18:23:33.331961
-Connection closed from (apparently) out
-
-mainMITM:
-Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 54954)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 52738
--> (1897) byte  Source Port: 31002 Target Port: 52738 Timestamp: 2025-09-01 18:23:30.251863
-<- (7977) byte  Source Port: 31002 Target Port: 52738 Timestamp: 2025-09-01 18:23:30.252366
--> (0) byte b'' Source Port: 31002 Target Port: 52738 Timestamp: 2025-09-01 18:23:30.253062
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 54872)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 60224
--> (5687) byte  Source Port: 31002 Target Port: 60224 Timestamp: 2025-09-01 18:23:32.313933
-<- (3046) byte  Source Port: 31002 Target Port: 60224 Timestamp: 2025-09-01 18:23:32.314682
-<- (1404) byte  Source Port: 31002 Target Port: 60224 Timestamp: 2025-09-01 18:23:32.316334
-<- (994) byte  Source Port: 31002 Target Port: 60224 Timestamp: 2025-09-01 18:23:33.328744
--> (0) byte b'' Source Port: 31002 Target Port: 60224 Timestamp: 2025-09-01 18:23:33.335478
-Connection closed from (apparently) out
-
-serverProxyMITM:
-Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 50614)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 35592
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 35592 Timestamp: 2025-09-01 18:23:30.252994
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 56234)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 40958
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 40958 Timestamp: 2025-09-01 18:23:32.315836
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 40958 Timestamp: 2025-09-01 18:23:33.326792
--> (0) byte b'' Source Port: 31003 Target Port: 40958 Timestamp: 2025-09-01 18:23:33.336917
-Connection closed from (apparently) out
-
-Client:
-time: 2025-09-01 18:23:32.310396, Mode 4 - start experiment
-time: 2025-09-01 18:23:32.317295, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:23:33.331403, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:23:33.331910, Connection closed
-
-Server:
-time: 2025-09-01 18:23:30.252944, sent 10 byte of X
-time: 2025-09-01 18:23:31.262391, sent 10 byte of Y
-time: 2025-09-01 18:23:32.315821, sent 10 byte of X
-time: 2025-09-01 18:23:33.327234, sent 10 byte of Y
-Completed iteration 6 for mode 4 with msg size 10 at 20250901-182328
-----------------------------------------
-Starting iteration 7 for mode 4 with msg size 10 at 20250901-182335
-Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 268
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 40
-	Terminated by RST: SERVERPROXY -> MITM
-
-
-clientProxyMITM:
-Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 44836)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 57210
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 57210 Timestamp: 2025-09-01 18:23:39.777376
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 57210 Timestamp: 2025-09-01 18:23:40.780303
--> (0) byte b'' Source Port: 31000 Target Port: 57210 Timestamp: 2025-09-01 18:23:40.781624
-Connection closed from (apparently) out
-
-mainMITM:
-Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 54878)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 60252
--> (1302) byte  Source Port: 31002 Target Port: 60252 Timestamp: 2025-09-01 18:23:37.712376
-<- (3082) byte  Source Port: 31002 Target Port: 60252 Timestamp: 2025-09-01 18:23:37.712805
-<- (972) byte  Source Port: 31002 Target Port: 60252 Timestamp: 2025-09-01 18:23:37.713822
--> (0) byte b'' Source Port: 31002 Target Port: 60252 Timestamp: 2025-09-01 18:23:37.713907
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 54882)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 60254
--> (3629) byte  Source Port: 31002 Target Port: 60254 Timestamp: 2025-09-01 18:23:39.773413
-<- (6604) byte  Source Port: 31002 Target Port: 60254 Timestamp: 2025-09-01 18:23:39.774470
-<- (87) byte b'\xdd\\\xcb\xc5\x18\x04@\xdf\x19&\xb8D\xdbb\xba\xce\xd1!E\x82m\x93\x86\x16k]\xfc\x08\xb15y\x1b\xfb\xb4\xe0\xb1\x80\xdcO\xc3\x1d\x13\n\x84\xbc\xderM\xa7\xeaG\xd7%(\x0f07\xf4\x14\xa0]\x83\xa8\xc6\xd2\x03$\xa5\xfaY\x8f\xec)\xe1\x18O\x1cG\xc3@\\2\xac\x99v\x93\x0e' Source Port: 31002 Target Port: 60254 Timestamp: 2025-09-01 18:23:39.776642
-<- (1404) byte  Source Port: 31002 Target Port: 60254 Timestamp: 2025-09-01 18:23:40.779230
--> (0) byte b'' Source Port: 31002 Target Port: 60254 Timestamp: 2025-09-01 18:23:40.783636
-Connection closed from (apparently) out
-
-serverProxyMITM:
-Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 56236)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 40962
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 40962 Timestamp: 2025-09-01 18:23:37.713522
--> (0) byte b'' Source Port: 31003 Target Port: 40962 Timestamp: 2025-09-01 18:23:37.714124
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 56244)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 40974
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 40974 Timestamp: 2025-09-01 18:23:39.776296
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 40974 Timestamp: 2025-09-01 18:23:40.777917
--> (0) byte b'' Source Port: 31003 Target Port: 40974 Timestamp: 2025-09-01 18:23:40.784449
-Connection closed from (apparently) out
-
-Client:
-time: 2025-09-01 18:23:39.767017, Mode 4 - start experiment
-time: 2025-09-01 18:23:39.777631, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:23:40.780829, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:23:40.781327, Connection closed
-
-Server:
-time: 2025-09-01 18:23:37.713516, sent 10 byte of X
-time: 2025-09-01 18:23:38.725619, sent 10 byte of Y
-time: 2025-09-01 18:23:39.776269, sent 10 byte of X
-time: 2025-09-01 18:23:40.777962, sent 10 byte of Y
-Completed iteration 7 for mode 4 with msg size 10 at 20250901-182335
-----------------------------------------
-Starting iteration 8 for mode 4 with msg size 10 at 20250901-182342
-Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 287
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 40
-	Terminated by RST: SERVERPROXY -> MITM
-
-
-clientProxyMITM:
-Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 50386)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 55544
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 55544 Timestamp: 2025-09-01 18:23:47.230136
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 55544 Timestamp: 2025-09-01 18:23:48.242310
--> (0) byte b'' Source Port: 31000 Target Port: 55544 Timestamp: 2025-09-01 18:23:48.243574
-Connection closed from (apparently) out
-
-mainMITM:
-Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 47464)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 59860
--> (4408) byte  Source Port: 31002 Target Port: 59860 Timestamp: 2025-09-01 18:23:45.162904
-<- (8129) byte  Source Port: 31002 Target Port: 59860 Timestamp: 2025-09-01 18:23:45.163352
-<- (321) byte  Source Port: 31002 Target Port: 59860 Timestamp: 2025-09-01 18:23:45.164343
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 47480)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 59874
--> (5010) byte  Source Port: 31002 Target Port: 59874 Timestamp: 2025-09-01 18:23:47.224440
-<- (1206) byte  Source Port: 31002 Target Port: 59874 Timestamp: 2025-09-01 18:23:47.225827
-<- (385) byte  Source Port: 31002 Target Port: 59874 Timestamp: 2025-09-01 18:23:47.229318
-<- (715) byte  Source Port: 31002 Target Port: 59874 Timestamp: 2025-09-01 18:23:48.240762
--> (0) byte b'' Source Port: 31002 Target Port: 59874 Timestamp: 2025-09-01 18:23:48.244920
-Connection closed from (apparently) out
-
-serverProxyMITM:
-Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 45744)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 47736
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 47736 Timestamp: 2025-09-01 18:23:45.164186
--> (0) byte b'' Source Port: 31003 Target Port: 47736 Timestamp: 2025-09-01 18:23:45.164730
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 45752)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 47744
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 47744 Timestamp: 2025-09-01 18:23:47.228657
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 47744 Timestamp: 2025-09-01 18:23:48.239644
--> (0) byte b'' Source Port: 31003 Target Port: 47744 Timestamp: 2025-09-01 18:23:48.246339
-Connection closed from (apparently) out
-
-Client:
-time: 2025-09-01 18:23:47.216649, Mode 4 - start experiment
-time: 2025-09-01 18:23:47.230413, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:23:48.242989, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:23:48.243450, Connection closed
-
-Server:
-time: 2025-09-01 18:23:45.164227, sent 10 byte of X
-time: 2025-09-01 18:23:46.166458, sent 10 byte of Y
-time: 2025-09-01 18:23:47.228709, sent 10 byte of X
-time: 2025-09-01 18:23:48.239787, sent 10 byte of Y
-Completed iteration 8 for mode 4 with msg size 10 at 20250901-182342
-----------------------------------------
-Starting iteration 9 for mode 4 with msg size 10 at 20250901-182350
-Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 282
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 30
-	Terminated by RST: SERVERPROXY -> MITM
-
-
-clientProxyMITM:
-Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 47246)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 41986
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 41986 Timestamp: 2025-09-01 18:23:54.772975
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 41986 Timestamp: 2025-09-01 18:23:55.784615
--> (0) byte b'' Source Port: 31000 Target Port: 41986 Timestamp: 2025-09-01 18:23:55.785758
-Connection closed from (apparently) out
-
-mainMITM:
-Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 55910)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 48930
--> (1168) byte  Source Port: 31002 Target Port: 48930 Timestamp: 2025-09-01 18:23:52.707075
-<- (1196) byte  Source Port: 31002 Target Port: 48930 Timestamp: 2025-09-01 18:23:52.707586
--> (0) byte b'' Source Port: 31002 Target Port: 48930 Timestamp: 2025-09-01 18:23:52.708314
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 55924)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 48946
--> (1625) byte  Source Port: 31002 Target Port: 48946 Timestamp: 2025-09-01 18:23:54.770201
-<- (6615) byte  Source Port: 31002 Target Port: 48946 Timestamp: 2025-09-01 18:23:54.770977
-<- (647) byte  Source Port: 31002 Target Port: 48946 Timestamp: 2025-09-01 18:23:54.772344
-<- (627) byte  Source Port: 31002 Target Port: 48946 Timestamp: 2025-09-01 18:23:55.783260
--> (0) byte b'' Source Port: 31002 Target Port: 48946 Timestamp: 2025-09-01 18:23:55.788441
-Connection closed from (apparently) out
-
-serverProxyMITM:
-Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 57468)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 56536
--> (0) byte b'' Source Port: 31003 Target Port: 56536 Timestamp: 2025-09-01 18:23:52.709554
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 57476)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 56548
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 56548 Timestamp: 2025-09-01 18:23:54.772007
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 56548 Timestamp: 2025-09-01 18:23:55.781885
--> (0) byte b'' Source Port: 31003 Target Port: 56548 Timestamp: 2025-09-01 18:23:55.789497
-Connection closed from (apparently) out
-
-Client:
-time: 2025-09-01 18:23:54.766902, Mode 4 - start experiment
-time: 2025-09-01 18:23:54.773311, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:23:55.785380, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:23:55.785783, Connection closed
-
-Server:
-time: 2025-09-01 18:23:52.709808, sent 10 byte of X
-time: 2025-09-01 18:23:54.771991, sent 10 byte of X
-time: 2025-09-01 18:23:55.782263, sent 10 byte of Y
-Completed iteration 9 for mode 4 with msg size 10 at 20250901-182350
-----------------------------------------
-Starting iteration 10 for mode 4 with msg size 10 at 20250901-182357
-Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 280
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 30
-	Terminated by RST: SERVERPROXY -> MITM
-
-
-clientProxyMITM:
-Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 47256)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 42008
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 42008 Timestamp: 2025-09-01 18:24:02.186367
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 42008 Timestamp: 2025-09-01 18:24:03.195759
--> (0) byte b'' Source Port: 31000 Target Port: 42008 Timestamp: 2025-09-01 18:24:03.197001
-Connection closed from (apparently) out
-
-mainMITM:
-Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 55928)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 48970
--> (3469) byte  Source Port: 31002 Target Port: 48970 Timestamp: 2025-09-01 18:24:00.127558
-<- (2297) byte  Source Port: 31002 Target Port: 48970 Timestamp: 2025-09-01 18:24:00.127875
--> (0) byte b'' Source Port: 31002 Target Port: 48970 Timestamp: 2025-09-01 18:24:00.128335
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 55944)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 48978
--> (5137) byte  Source Port: 31002 Target Port: 48978 Timestamp: 2025-09-01 18:24:02.183351
-<- (7573) byte  Source Port: 31002 Target Port: 48978 Timestamp: 2025-09-01 18:24:02.184119
-<- (830) byte  Source Port: 31002 Target Port: 48978 Timestamp: 2025-09-01 18:24:02.185730
-<- (543) byte  Source Port: 31002 Target Port: 48978 Timestamp: 2025-09-01 18:24:03.193956
--> (0) byte b'' Source Port: 31002 Target Port: 48978 Timestamp: 2025-09-01 18:24:03.199327
-Connection closed from (apparently) out
-
-serverProxyMITM:
-Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 57486)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 56552
--> (0) byte b'' Source Port: 31003 Target Port: 56552 Timestamp: 2025-09-01 18:24:00.129371
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 57492)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 56560
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 56560 Timestamp: 2025-09-01 18:24:02.185380
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 56560 Timestamp: 2025-09-01 18:24:03.192703
--> (0) byte b'' Source Port: 31003 Target Port: 56560 Timestamp: 2025-09-01 18:24:03.200497
-Connection closed from (apparently) out
-
-Client:
-time: 2025-09-01 18:24:02.179584, Mode 4 - start experiment
-time: 2025-09-01 18:24:02.186532, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:24:03.196627, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:24:03.197018, Connection closed
-
-Server:
-time: 2025-09-01 18:24:00.129642, sent 10 byte of X
-time: 2025-09-01 18:24:02.185371, sent 10 byte of X
-time: 2025-09-01 18:24:03.192717, sent 10 byte of Y
-Completed iteration 10 for mode 4 with msg size 10 at 20250901-182357
-----------------------------------------
-Starting iteration 11 for mode 4 with msg size 10 at 20250901-182405
-Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 277
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 30
-	Terminated by RST: SERVERPROXY -> MITM
-
-
-clientProxyMITM:
-Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 45698)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 55176
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 55176 Timestamp: 2025-09-01 18:24:09.600992
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 55176 Timestamp: 2025-09-01 18:24:10.607329
--> (0) byte b'' Source Port: 31000 Target Port: 55176 Timestamp: 2025-09-01 18:24:10.608594
-Connection closed from (apparently) out
-
-mainMITM:
-Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 47684)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 60628
--> (2412) byte  Source Port: 31002 Target Port: 60628 Timestamp: 2025-09-01 18:24:07.539299
-<- (3334) byte  Source Port: 31002 Target Port: 60628 Timestamp: 2025-09-01 18:24:07.539848
--> (0) byte b'' Source Port: 31002 Target Port: 60628 Timestamp: 2025-09-01 18:24:07.540561
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 47700)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 60644
--> (4763) byte  Source Port: 31002 Target Port: 60644 Timestamp: 2025-09-01 18:24:09.597544
-<- (7820) byte  Source Port: 31002 Target Port: 60644 Timestamp: 2025-09-01 18:24:09.598547
-<- (220) byte  Source Port: 31002 Target Port: 60644 Timestamp: 2025-09-01 18:24:09.600413
-<- (220) byte  Source Port: 31002 Target Port: 60644 Timestamp: 2025-09-01 18:24:10.605677
--> (0) byte b'' Source Port: 31002 Target Port: 60644 Timestamp: 2025-09-01 18:24:10.610565
-Connection closed from (apparently) out
-
-serverProxyMITM:
-Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 33064)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 37422
--> (0) byte b'' Source Port: 31003 Target Port: 37422 Timestamp: 2025-09-01 18:24:07.540768
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 33078)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 37434
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 37434 Timestamp: 2025-09-01 18:24:09.600155
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 37434 Timestamp: 2025-09-01 18:24:10.604344
--> (0) byte b'' Source Port: 31003 Target Port: 37434 Timestamp: 2025-09-01 18:24:10.612751
-Connection closed from (apparently) out
-
-Client:
-time: 2025-09-01 18:24:09.592635, Mode 4 - start experiment
-time: 2025-09-01 18:24:09.601329, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:24:10.608154, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:24:10.608566, Connection closed
-
-Server:
-time: 2025-09-01 18:24:07.541211, sent 10 byte of X
-time: 2025-09-01 18:24:09.600188, sent 10 byte of X
-time: 2025-09-01 18:24:10.604514, sent 10 byte of Y
-Completed iteration 11 for mode 4 with msg size 10 at 20250901-182405
-----------------------------------------
-Starting iteration 12 for mode 4 with msg size 10 at 20250901-182412
-Results extracted:
-Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 
-	Frames: 277
-	Client got: 20 over 0 messages,  sent 0
-	Server got: 0, over 0 messages, sent 40
-	Terminated by RST: SERVERPROXY -> MITM
-
-
-clientProxyMITM:
-Starting MITM: 31000 -> 31001
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 56668)>
-Connected to: 127.0.0.1, 31001 using ephemeral port 51876
-<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 51876 Timestamp: 2025-09-01 18:24:17.124390
-<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 51876 Timestamp: 2025-09-01 18:24:18.134760
--> (0) byte b'' Source Port: 31000 Target Port: 51876 Timestamp: 2025-09-01 18:24:18.137012
-Connection closed from (apparently) out
-
-mainMITM:
-Starting MITM: 31002 -> 10086
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 45822)>
-Connected to: 127.0.0.1, 10086 using ephemeral port 48850
--> (197) byte  Source Port: 31002 Target Port: 48850 Timestamp: 2025-09-01 18:24:15.070903
-<- (6568) byte  Source Port: 31002 Target Port: 48850 Timestamp: 2025-09-01 18:24:15.071472
--> (0) byte b'' Source Port: 31002 Target Port: 48850 Timestamp: 2025-09-01 18:24:15.072350
-Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 45838)>
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 37758)>
 Connected to: 127.0.0.1, 10086 using ephemeral port 48852
--> (5312) byte  Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-01 18:24:17.121476
-<- (5914) byte  Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-01 18:24:17.122313
-<- (1213) byte  Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-01 18:24:17.123679
-<- (843) byte  Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-01 18:24:18.131706
--> (0) byte b'' Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-01 18:24:18.139763
-Connection closed from (apparently) out
+-> (3439) byte  Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-07 23:40:29.839802
+<- (7545) byte  Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-07 23:40:29.840454
+<- (805) byte  Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-07 23:40:29.842647
+<- (340) byte  Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-07 23:40:30.345766
+<- (388) byte  Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-07 23:40:30.847385
+<- (667) byte  Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-07 23:40:31.349921
+<- (0) byte b'' Source Port: 31002 Target Port: 48852 Timestamp: 2025-09-07 23:40:31.851008
+Connection closed from (apparently) in
 
 serverProxyMITM:
 Starting MITM: 31003 -> 31004
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 53650)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 50886
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 50886 Timestamp: 2025-09-01 18:24:15.072385
--> (0) byte b'' Source Port: 31003 Target Port: 50886 Timestamp: 2025-09-01 18:24:15.072664
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 57690)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 42088
+-> (0) byte b'' Source Port: 31003 Target Port: 42088 Timestamp: 2025-09-07 23:40:27.791238
 Connection closed from (apparently) out
-Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 53654)>
-Connected to: 127.0.0.1, 31004 using ephemeral port 50892
-<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 50892 Timestamp: 2025-09-01 18:24:17.123395
-<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 50892 Timestamp: 2025-09-01 18:24:18.129643
--> (0) byte b'' Source Port: 31003 Target Port: 50892 Timestamp: 2025-09-01 18:24:18.141763
-Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 37544)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 48724
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 48724 Timestamp: 2025-09-07 23:40:29.842211
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 48724 Timestamp: 2025-09-07 23:40:30.343915
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 48724 Timestamp: 2025-09-07 23:40:30.846331
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 48724 Timestamp: 2025-09-07 23:40:31.347966
+<- (0) byte b'' Source Port: 31003 Target Port: 48724 Timestamp: 2025-09-07 23:40:31.849432
+Connection closed from (apparently) in
 
 Client:
-time: 2025-09-01 18:24:17.118108, Mode 4 - start experiment
-time: 2025-09-01 18:24:17.124605, Received 1st 10 bytes, last byte content: 88
-time: 2025-09-01 18:24:18.136295, Received 2nd 10 bytes, last byte content: 89
-time: 2025-09-01 18:24:18.136940, Connection closed
+time: 2025-09-07 23:40:29.835668, Mode 4 - start experiment
+time: 2025-09-07 23:40:29.835891, Iteration: 1
+time: 2025-09-07 23:40:29.843761, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:30.348880, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:30.849714, Iteration: 2
+time: 2025-09-07 23:40:30.849971, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:31.352396, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:31.853625, Connection closed
 
 Server:
-time: 2025-09-01 18:24:15.072257, sent 10 byte of X
-time: 2025-09-01 18:24:16.075264, sent 10 byte of Y
-time: 2025-09-01 18:24:17.123588, sent 10 byte of X
-time: 2025-09-01 18:24:18.129999, sent 10 byte of Y
-Completed iteration 12 for mode 4 with msg size 10 at 20250901-182412
+time: 2025-09-07 23:40:27.792207, Iteration: 1
+time: 2025-09-07 23:40:27.792354, sent 10 byte of X
+time: 2025-09-07 23:40:29.841912, Iteration: 1
+time: 2025-09-07 23:40:29.842173, sent 10 byte of X
+time: 2025-09-07 23:40:30.344184, sent 10 byte of Y
+time: 2025-09-07 23:40:30.845532, Iteration: 2
+time: 2025-09-07 23:40:30.846299, sent 10 byte of X
+time: 2025-09-07 23:40:31.348324, sent 10 byte of Y
+Completed iteration 4 for mode 4 with msg size 10 at 20250907-234025
+----------------------------------------
+Starting iteration 5 for mode 4 with msg size 10 at 20250907-234033
+Results extracted:
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 340
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 50
+	Terminated by RST: SERVERPROXY -> MITM
+
+
+clientProxyMITM:
+Starting MITM: 31000 -> 31001
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 58172)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 57114
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 57114 Timestamp: 2025-09-07 23:40:38.289639
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 57114 Timestamp: 2025-09-07 23:40:38.793680
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 57114 Timestamp: 2025-09-07 23:40:39.299471
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 57114 Timestamp: 2025-09-07 23:40:39.803221
+<- (0) byte b'' Source Port: 31000 Target Port: 57114 Timestamp: 2025-09-07 23:40:40.305890
+Connection closed from (apparently) in
+
+mainMITM:
+Starting MITM: 31002 -> 10086
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 37768)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 48886
+-> (5794) byte  Source Port: 31002 Target Port: 48886 Timestamp: 2025-09-07 23:40:36.249735
+<- (6387) byte  Source Port: 31002 Target Port: 48886 Timestamp: 2025-09-07 23:40:36.250278
+-> (0) byte b'' Source Port: 31002 Target Port: 48886 Timestamp: 2025-09-07 23:40:36.250801
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 37770)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 48898
+-> (3638) byte  Source Port: 31002 Target Port: 48898 Timestamp: 2025-09-07 23:40:38.286119
+<- (1092) byte  Source Port: 31002 Target Port: 48898 Timestamp: 2025-09-07 23:40:38.286861
+<- (676) byte  Source Port: 31002 Target Port: 48898 Timestamp: 2025-09-07 23:40:38.288809
+<- (1034) byte  Source Port: 31002 Target Port: 48898 Timestamp: 2025-09-07 23:40:38.792310
+<- (337) byte  Source Port: 31002 Target Port: 48898 Timestamp: 2025-09-07 23:40:39.297717
+<- (66) byte b"N\xafFi\x7f\xde\x8fk_\x1f\xbc\xb3\x11Al\x16x\xbc\xea\xb8\x81\xd9f2\n\xa1)\xdbo\xbf\xd1=\x1a\xed\xea\x89)\xaa\xde\xdf\xc5\xce\x03\x07\xb0\x11o\x88\xc3\xc29f\xdf\xfdk\xbb\x98\xc4'\xfd\xb87S3\tk" Source Port: 31002 Target Port: 48898 Timestamp: 2025-09-07 23:40:39.800697
+<- (0) byte b'' Source Port: 31002 Target Port: 48898 Timestamp: 2025-09-07 23:40:40.303590
+Connection closed from (apparently) in
+
+serverProxyMITM:
+Starting MITM: 31003 -> 31004
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 37546)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 48740
+-> (0) byte b'' Source Port: 31003 Target Port: 48740 Timestamp: 2025-09-07 23:40:36.252349
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 37548)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 48750
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 48750 Timestamp: 2025-09-07 23:40:38.288370
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 48750 Timestamp: 2025-09-07 23:40:38.790889
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 48750 Timestamp: 2025-09-07 23:40:39.295988
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 48750 Timestamp: 2025-09-07 23:40:39.799397
+<- (0) byte b'' Source Port: 31003 Target Port: 48750 Timestamp: 2025-09-07 23:40:40.302229
+Connection closed from (apparently) in
+
+Client:
+time: 2025-09-07 23:40:38.282721, Mode 4 - start experiment
+time: 2025-09-07 23:40:38.282859, Iteration: 1
+time: 2025-09-07 23:40:38.289867, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:38.794435, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:39.295366, Iteration: 2
+time: 2025-09-07 23:40:39.300188, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:39.803822, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:40.305882, Connection closed
+
+Server:
+time: 2025-09-07 23:40:36.250985, Iteration: 1
+time: 2025-09-07 23:40:36.252555, sent 10 byte of X
+time: 2025-09-07 23:40:38.288011, Iteration: 1
+time: 2025-09-07 23:40:38.288323, sent 10 byte of X
+time: 2025-09-07 23:40:38.791303, sent 10 byte of Y
+time: 2025-09-07 23:40:39.295369, Iteration: 2
+time: 2025-09-07 23:40:39.295903, sent 10 byte of X
+time: 2025-09-07 23:40:39.799589, sent 10 byte of Y
+Completed iteration 5 for mode 4 with msg size 10 at 20250907-234033
+----------------------------------------
+Starting iteration 6 for mode 4 with msg size 10 at 20250907-234042
+Results extracted:
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 346
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 60
+	Terminated by RST: SERVERPROXY -> MITM
+
+
+clientProxyMITM:
+Starting MITM: 31000 -> 31001
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 38156)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 55684
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 55684 Timestamp: 2025-09-07 23:40:46.724485
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 55684 Timestamp: 2025-09-07 23:40:47.227538
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 55684 Timestamp: 2025-09-07 23:40:47.731220
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 55684 Timestamp: 2025-09-07 23:40:48.229305
+<- (0) byte b'' Source Port: 31000 Target Port: 55684 Timestamp: 2025-09-07 23:40:48.732689
+Connection closed from (apparently) in
+
+mainMITM:
+Starting MITM: 31002 -> 10086
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 33234)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 60300
+-> (795) byte  Source Port: 31002 Target Port: 60300 Timestamp: 2025-09-07 23:40:44.667347
+<- (1825) byte  Source Port: 31002 Target Port: 60300 Timestamp: 2025-09-07 23:40:44.667934
+-> (0) byte b'' Source Port: 31002 Target Port: 60300 Timestamp: 2025-09-07 23:40:44.668772
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 33246)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 60302
+-> (4150) byte  Source Port: 31002 Target Port: 60302 Timestamp: 2025-09-07 23:40:46.721799
+<- (2609) byte  Source Port: 31002 Target Port: 60302 Timestamp: 2025-09-07 23:40:46.722504
+<- (284) byte  Source Port: 31002 Target Port: 60302 Timestamp: 2025-09-07 23:40:46.723919
+<- (510) byte  Source Port: 31002 Target Port: 60302 Timestamp: 2025-09-07 23:40:47.226262
+<- (388) byte  Source Port: 31002 Target Port: 60302 Timestamp: 2025-09-07 23:40:47.728930
+<- (893) byte  Source Port: 31002 Target Port: 60302 Timestamp: 2025-09-07 23:40:48.228616
+<- (0) byte b'' Source Port: 31002 Target Port: 60302 Timestamp: 2025-09-07 23:40:48.730541
+Connection closed from (apparently) in
+
+serverProxyMITM:
+Starting MITM: 31003 -> 31004
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 36530)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 55780
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 55780 Timestamp: 2025-09-07 23:40:44.668808
+-> (0) byte b'' Source Port: 31003 Target Port: 55780 Timestamp: 2025-09-07 23:40:44.669203
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 36540)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 55784
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 55784 Timestamp: 2025-09-07 23:40:46.723649
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 55784 Timestamp: 2025-09-07 23:40:47.224653
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 55784 Timestamp: 2025-09-07 23:40:47.727716
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 55784 Timestamp: 2025-09-07 23:40:48.228293
+<- (0) byte b'' Source Port: 31003 Target Port: 55784 Timestamp: 2025-09-07 23:40:48.729329
+Connection closed from (apparently) in
+
+Client:
+time: 2025-09-07 23:40:46.718423, Mode 4 - start experiment
+time: 2025-09-07 23:40:46.718554, Iteration: 1
+time: 2025-09-07 23:40:46.724734, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:47.228225, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:47.728860, Iteration: 2
+time: 2025-09-07 23:40:47.731920, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:48.232840, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:48.733371, Connection closed
+
+Server:
+time: 2025-09-07 23:40:44.668604, Iteration: 1
+time: 2025-09-07 23:40:44.668735, sent 10 byte of X
+time: 2025-09-07 23:40:45.170567, sent 10 byte of Y
+time: 2025-09-07 23:40:45.672632, Iteration: 2
+time: 2025-09-07 23:40:46.723469, Iteration: 1
+time: 2025-09-07 23:40:46.723595, sent 10 byte of X
+time: 2025-09-07 23:40:47.224696, sent 10 byte of Y
+time: 2025-09-07 23:40:47.726697, Iteration: 2
+time: 2025-09-07 23:40:47.727549, sent 10 byte of X
+time: 2025-09-07 23:40:48.228306, sent 10 byte of Y
+Completed iteration 6 for mode 4 with msg size 10 at 20250907-234042
+----------------------------------------
+Starting iteration 7 for mode 4 with msg size 10 at 20250907-234050
+Results extracted:
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 344
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 50
+	Terminated by RST: SERVERPROXY -> MITM
+
+
+clientProxyMITM:
+Starting MITM: 31000 -> 31001
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 60198)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 54692
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 54692 Timestamp: 2025-09-07 23:40:55.170700
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 54692 Timestamp: 2025-09-07 23:40:55.674318
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 54692 Timestamp: 2025-09-07 23:40:56.176773
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 54692 Timestamp: 2025-09-07 23:40:56.677943
+-> (0) byte b'' Source Port: 31000 Target Port: 54692 Timestamp: 2025-09-07 23:40:57.181363
+Connection closed from (apparently) out
+
+mainMITM:
+Starting MITM: 31002 -> 10086
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 50780)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 50126
+-> (5832) byte  Source Port: 31002 Target Port: 50126 Timestamp: 2025-09-07 23:40:53.098711
+<- (7135) byte  Source Port: 31002 Target Port: 50126 Timestamp: 2025-09-07 23:40:53.099447
+-> (0) byte b'' Source Port: 31002 Target Port: 50126 Timestamp: 2025-09-07 23:40:53.100250
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 50784)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 50140
+-> (4502) byte  Source Port: 31002 Target Port: 50140 Timestamp: 2025-09-07 23:40:55.166733
+<- (8123) byte  Source Port: 31002 Target Port: 50140 Timestamp: 2025-09-07 23:40:55.167777
+<- (667) byte  Source Port: 31002 Target Port: 50140 Timestamp: 2025-09-07 23:40:55.170053
+<- (636) byte  Source Port: 31002 Target Port: 50140 Timestamp: 2025-09-07 23:40:55.672419
+<- (532) byte  Source Port: 31002 Target Port: 50140 Timestamp: 2025-09-07 23:40:56.175296
+<- (805) byte  Source Port: 31002 Target Port: 50140 Timestamp: 2025-09-07 23:40:56.676278
+<- (0) byte b'' Source Port: 31002 Target Port: 50140 Timestamp: 2025-09-07 23:40:57.183940
+Connection closed from (apparently) in
+
+serverProxyMITM:
+Starting MITM: 31003 -> 31004
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 43736)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 38510
+-> (0) byte b'' Source Port: 31003 Target Port: 38510 Timestamp: 2025-09-07 23:40:53.102212
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 43750)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 38516
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 38516 Timestamp: 2025-09-07 23:40:55.169538
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 38516 Timestamp: 2025-09-07 23:40:55.671010
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 38516 Timestamp: 2025-09-07 23:40:56.173843
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 38516 Timestamp: 2025-09-07 23:40:56.674829
+<- (0) byte b'' Source Port: 31003 Target Port: 38516 Timestamp: 2025-09-07 23:40:57.180920
+Connection closed from (apparently) in
+
+Client:
+time: 2025-09-07 23:40:55.161310, Mode 4 - start experiment
+time: 2025-09-07 23:40:55.161519, Iteration: 1
+time: 2025-09-07 23:40:55.170909, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:55.675297, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:56.175953, Iteration: 2
+time: 2025-09-07 23:40:56.177652, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:40:56.678859, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:40:57.181548, Connection closed
+
+Server:
+time: 2025-09-07 23:40:53.102459, Iteration: 1
+time: 2025-09-07 23:40:53.102561, sent 10 byte of X
+time: 2025-09-07 23:40:55.169333, Iteration: 1
+time: 2025-09-07 23:40:55.169922, sent 10 byte of X
+time: 2025-09-07 23:40:55.671312, sent 10 byte of Y
+time: 2025-09-07 23:40:56.173195, Iteration: 2
+time: 2025-09-07 23:40:56.173738, sent 10 byte of X
+time: 2025-09-07 23:40:56.675011, sent 10 byte of Y
+Completed iteration 7 for mode 4 with msg size 10 at 20250907-234050
+----------------------------------------
+Starting iteration 8 for mode 4 with msg size 10 at 20250907-234059
+Results extracted:
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 360
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 60
+	Terminated by RST: SERVERPROXY -> MITM
+
+
+clientProxyMITM:
+Starting MITM: 31000 -> 31001
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 52960)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 43006
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 43006 Timestamp: 2025-09-07 23:41:03.594239
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 43006 Timestamp: 2025-09-07 23:41:04.101696
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 43006 Timestamp: 2025-09-07 23:41:04.607884
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 43006 Timestamp: 2025-09-07 23:41:05.108380
+<- (0) byte b'' Source Port: 31000 Target Port: 43006 Timestamp: 2025-09-07 23:41:05.611917
+Connection closed from (apparently) in
+
+mainMITM:
+Starting MITM: 31002 -> 10086
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 35968)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 60258
+-> (1678) byte  Source Port: 31002 Target Port: 60258 Timestamp: 2025-09-07 23:41:01.535338
+<- (6257) byte  Source Port: 31002 Target Port: 60258 Timestamp: 2025-09-07 23:41:01.536144
+-> (0) byte b'' Source Port: 31002 Target Port: 60258 Timestamp: 2025-09-07 23:41:01.536679
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 35982)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 60266
+-> (5304) byte  Source Port: 31002 Target Port: 60266 Timestamp: 2025-09-07 23:41:03.589327
+<- (1406) byte  Source Port: 31002 Target Port: 60266 Timestamp: 2025-09-07 23:41:03.590364
+<- (387) byte  Source Port: 31002 Target Port: 60266 Timestamp: 2025-09-07 23:41:03.593546
+<- (677) byte  Source Port: 31002 Target Port: 60266 Timestamp: 2025-09-07 23:41:04.099886
+<- (676) byte  Source Port: 31002 Target Port: 60266 Timestamp: 2025-09-07 23:41:04.604676
+<- (468) byte  Source Port: 31002 Target Port: 60266 Timestamp: 2025-09-07 23:41:05.106507
+<- (0) byte b'' Source Port: 31002 Target Port: 60266 Timestamp: 2025-09-07 23:41:05.609795
+Connection closed from (apparently) in
+
+serverProxyMITM:
+Starting MITM: 31003 -> 31004
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 48666)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 35024
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 35024 Timestamp: 2025-09-07 23:41:01.536802
+-> (0) byte b'' Source Port: 31003 Target Port: 35024 Timestamp: 2025-09-07 23:41:01.537382
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 48676)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 35036
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 35036 Timestamp: 2025-09-07 23:41:03.592980
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 35036 Timestamp: 2025-09-07 23:41:04.098425
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 35036 Timestamp: 2025-09-07 23:41:04.603283
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 35036 Timestamp: 2025-09-07 23:41:05.104948
+<- (0) byte b'' Source Port: 31003 Target Port: 35036 Timestamp: 2025-09-07 23:41:05.607859
+Connection closed from (apparently) in
+
+Client:
+time: 2025-09-07 23:41:03.582896, Mode 4 - start experiment
+time: 2025-09-07 23:41:03.583203, Iteration: 1
+time: 2025-09-07 23:41:03.594480, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:41:04.102443, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:41:04.603531, Iteration: 2
+time: 2025-09-07 23:41:04.609188, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:41:05.110471, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:41:05.611933, Connection closed
+
+Server:
+time: 2025-09-07 23:41:01.536639, Iteration: 1
+time: 2025-09-07 23:41:01.536755, sent 10 byte of X
+time: 2025-09-07 23:41:02.039750, sent 10 byte of Y
+time: 2025-09-07 23:41:02.544961, Iteration: 2
+time: 2025-09-07 23:41:03.592784, Iteration: 1
+time: 2025-09-07 23:41:03.592983, sent 10 byte of X
+time: 2025-09-07 23:41:04.098604, sent 10 byte of Y
+time: 2025-09-07 23:41:04.601579, Iteration: 2
+time: 2025-09-07 23:41:04.602565, sent 10 byte of X
+time: 2025-09-07 23:41:05.105299, sent 10 byte of Y
+Completed iteration 8 for mode 4 with msg size 10 at 20250907-234059
+----------------------------------------
+Starting iteration 9 for mode 4 with msg size 10 at 20250907-234107
+Results extracted:
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 346
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 50
+	Terminated by RST: SERVERPROXY -> MITM
+
+
+clientProxyMITM:
+Starting MITM: 31000 -> 31001
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 43692)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 36392
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 36392 Timestamp: 2025-09-07 23:41:12.040463
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 36392 Timestamp: 2025-09-07 23:41:12.542608
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 36392 Timestamp: 2025-09-07 23:41:13.045585
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 36392 Timestamp: 2025-09-07 23:41:13.548652
+<- (0) byte b'' Source Port: 31000 Target Port: 36392 Timestamp: 2025-09-07 23:41:14.047841
+Connection closed from (apparently) in
+
+mainMITM:
+Starting MITM: 31002 -> 10086
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 57134)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 59110
+-> (2983) byte  Source Port: 31002 Target Port: 59110 Timestamp: 2025-09-07 23:41:09.982821
+<- (2549) byte  Source Port: 31002 Target Port: 59110 Timestamp: 2025-09-07 23:41:09.983338
+-> (0) byte b'' Source Port: 31002 Target Port: 59110 Timestamp: 2025-09-07 23:41:09.983809
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 57150)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 59118
+-> (4999) byte  Source Port: 31002 Target Port: 59118 Timestamp: 2025-09-07 23:41:12.036326
+<- (7342) byte  Source Port: 31002 Target Port: 59118 Timestamp: 2025-09-07 23:41:12.037217
+<- (387) byte  Source Port: 31002 Target Port: 59118 Timestamp: 2025-09-07 23:41:12.039315
+<- (636) byte  Source Port: 31002 Target Port: 59118 Timestamp: 2025-09-07 23:41:12.540744
+<- (1279) byte  Source Port: 31002 Target Port: 59118 Timestamp: 2025-09-07 23:41:13.044340
+<- (720) byte  Source Port: 31002 Target Port: 59118 Timestamp: 2025-09-07 23:41:13.546716
+<- (0) byte b'' Source Port: 31002 Target Port: 59118 Timestamp: 2025-09-07 23:41:14.046970
+Connection closed from (apparently) in
+
+serverProxyMITM:
+Starting MITM: 31003 -> 31004
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 56450)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 33758
+-> (0) byte b'' Source Port: 31003 Target Port: 33758 Timestamp: 2025-09-07 23:41:09.984152
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 56464)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 33766
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 33766 Timestamp: 2025-09-07 23:41:12.038774
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 33766 Timestamp: 2025-09-07 23:41:12.539616
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 33766 Timestamp: 2025-09-07 23:41:13.043697
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 33766 Timestamp: 2025-09-07 23:41:13.544996
+<- (0) byte b'' Source Port: 31003 Target Port: 33766 Timestamp: 2025-09-07 23:41:14.046386
+Connection closed from (apparently) in
+
+Client:
+time: 2025-09-07 23:41:12.033257, Mode 4 - start experiment
+time: 2025-09-07 23:41:12.033370, Iteration: 1
+time: 2025-09-07 23:41:12.040750, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:41:12.543285, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:41:13.044357, Iteration: 2
+time: 2025-09-07 23:41:13.045905, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:41:13.549328, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:41:14.050276, Connection closed
+
+Server:
+time: 2025-09-07 23:41:09.984123, Iteration: 1
+time: 2025-09-07 23:41:09.984249, sent 10 byte of X
+time: 2025-09-07 23:41:12.038460, Iteration: 1
+time: 2025-09-07 23:41:12.038622, sent 10 byte of X
+time: 2025-09-07 23:41:12.539757, sent 10 byte of Y
+time: 2025-09-07 23:41:13.043324, Iteration: 2
+time: 2025-09-07 23:41:13.043659, sent 10 byte of X
+time: 2025-09-07 23:41:13.545416, sent 10 byte of Y
+Completed iteration 9 for mode 4 with msg size 10 at 20250907-234107
+----------------------------------------
+Starting iteration 10 for mode 4 with msg size 10 at 20250907-234116
+Results extracted:
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 332
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 60
+	Terminated by RST: SERVERPROXY -> MITM
+
+
+clientProxyMITM:
+Starting MITM: 31000 -> 31001
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 52516)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 48718
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 48718 Timestamp: 2025-09-07 23:41:20.456248
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 48718 Timestamp: 2025-09-07 23:41:20.961584
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 48718 Timestamp: 2025-09-07 23:41:21.461387
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 48718 Timestamp: 2025-09-07 23:41:21.965520
+-> (0) byte b'' Source Port: 31000 Target Port: 48718 Timestamp: 2025-09-07 23:41:22.467576
+Connection closed from (apparently) out
+
+mainMITM:
+Starting MITM: 31002 -> 10086
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 57152)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 59146
+-> (5996) byte  Source Port: 31002 Target Port: 59146 Timestamp: 2025-09-07 23:41:18.397992
+<- (5326) byte  Source Port: 31002 Target Port: 59146 Timestamp: 2025-09-07 23:41:18.398577
+-> (0) byte b'' Source Port: 31002 Target Port: 59146 Timestamp: 2025-09-07 23:41:18.399250
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 52336)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 52852
+-> (1384) byte  Source Port: 31002 Target Port: 52852 Timestamp: 2025-09-07 23:41:20.452818
+<- (7520) byte  Source Port: 31002 Target Port: 52852 Timestamp: 2025-09-07 23:41:20.453686
+<- (337) byte  Source Port: 31002 Target Port: 52852 Timestamp: 2025-09-07 23:41:20.455442
+<- (568) byte  Source Port: 31002 Target Port: 52852 Timestamp: 2025-09-07 23:41:20.959635
+<- (941) byte  Source Port: 31002 Target Port: 52852 Timestamp: 2025-09-07 23:41:21.460638
+<- (1034) byte  Source Port: 31002 Target Port: 52852 Timestamp: 2025-09-07 23:41:21.963687
+<- (0) byte b'' Source Port: 31002 Target Port: 52852 Timestamp: 2025-09-07 23:41:22.465679
+Connection closed from (apparently) in
+
+serverProxyMITM:
+Starting MITM: 31003 -> 31004
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 56472)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 33768
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 33768 Timestamp: 2025-09-07 23:41:18.399371
+-> (0) byte b'' Source Port: 31003 Target Port: 33768 Timestamp: 2025-09-07 23:41:18.399461
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 40086)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 58560
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 58560 Timestamp: 2025-09-07 23:41:20.455156
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 58560 Timestamp: 2025-09-07 23:41:20.958565
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 58560 Timestamp: 2025-09-07 23:41:21.460097
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 58560 Timestamp: 2025-09-07 23:41:21.962504
+<- (0) byte b'' Source Port: 31003 Target Port: 58560 Timestamp: 2025-09-07 23:41:22.464326
+Connection closed from (apparently) in
+
+Client:
+time: 2025-09-07 23:41:20.448868, Mode 4 - start experiment
+time: 2025-09-07 23:41:20.448976, Iteration: 1
+time: 2025-09-07 23:41:20.456459, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:41:20.962370, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:41:21.463163, Iteration: 2
+time: 2025-09-07 23:41:21.463279, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:41:21.966289, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:41:22.467620, Connection closed
+
+Server:
+time: 2025-09-07 23:41:18.399223, Iteration: 1
+time: 2025-09-07 23:41:18.399324, sent 10 byte of X
+time: 2025-09-07 23:41:18.904784, sent 10 byte of Y
+time: 2025-09-07 23:41:19.406614, Iteration: 2
+time: 2025-09-07 23:41:20.454762, Iteration: 1
+time: 2025-09-07 23:41:20.454978, sent 10 byte of X
+time: 2025-09-07 23:41:20.958692, sent 10 byte of Y
+time: 2025-09-07 23:41:21.459645, Iteration: 2
+time: 2025-09-07 23:41:21.460011, sent 10 byte of X
+time: 2025-09-07 23:41:21.962673, sent 10 byte of Y
+Completed iteration 10 for mode 4 with msg size 10 at 20250907-234116
+----------------------------------------
+Starting iteration 11 for mode 4 with msg size 10 at 20250907-234124
+Results extracted:
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 354
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 60
+	Terminated by RST: SERVERPROXY -> MITM
+
+
+clientProxyMITM:
+Starting MITM: 31000 -> 31001
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 52520)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 48752
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 48752 Timestamp: 2025-09-07 23:41:28.886942
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 48752 Timestamp: 2025-09-07 23:41:29.389718
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 48752 Timestamp: 2025-09-07 23:41:29.892797
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 48752 Timestamp: 2025-09-07 23:41:30.396773
+-> (0) byte b'' Source Port: 31000 Target Port: 48752 Timestamp: 2025-09-07 23:41:30.898785
+Connection closed from (apparently) out
+
+mainMITM:
+Starting MITM: 31002 -> 10086
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 52348)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 52868
+-> (2100) byte  Source Port: 31002 Target Port: 52868 Timestamp: 2025-09-07 23:41:26.831503
+<- (2382) byte  Source Port: 31002 Target Port: 52868 Timestamp: 2025-09-07 23:41:26.831947
+-> (0) byte b'' Source Port: 31002 Target Port: 52868 Timestamp: 2025-09-07 23:41:26.832599
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 52362)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 52874
+-> (2784) byte  Source Port: 31002 Target Port: 52874 Timestamp: 2025-09-07 23:41:28.883148
+<- (3885) byte  Source Port: 31002 Target Port: 52874 Timestamp: 2025-09-07 23:41:28.883934
+<- (1046) byte  Source Port: 31002 Target Port: 52874 Timestamp: 2025-09-07 23:41:28.885990
+<- (1125) byte  Source Port: 31002 Target Port: 52874 Timestamp: 2025-09-07 23:41:29.387820
+<- (212) byte  Source Port: 31002 Target Port: 52874 Timestamp: 2025-09-07 23:41:29.890475
+<- (337) byte  Source Port: 31002 Target Port: 52874 Timestamp: 2025-09-07 23:41:30.394832
+<- (0) byte b'' Source Port: 31002 Target Port: 52874 Timestamp: 2025-09-07 23:41:30.896871
+Connection closed from (apparently) in
+
+serverProxyMITM:
+Starting MITM: 31003 -> 31004
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 40098)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 58568
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 58568 Timestamp: 2025-09-07 23:41:26.832804
+-> (0) byte b'' Source Port: 31003 Target Port: 58568 Timestamp: 2025-09-07 23:41:26.833270
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 40108)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 58570
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 58570 Timestamp: 2025-09-07 23:41:28.885674
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 58570 Timestamp: 2025-09-07 23:41:29.386550
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 58570 Timestamp: 2025-09-07 23:41:29.889534
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 58570 Timestamp: 2025-09-07 23:41:30.392830
+<- (0) byte b'' Source Port: 31003 Target Port: 58570 Timestamp: 2025-09-07 23:41:30.894668
+Connection closed from (apparently) in
+
+Client:
+time: 2025-09-07 23:41:28.879909, Mode 4 - start experiment
+time: 2025-09-07 23:41:28.880115, Iteration: 1
+time: 2025-09-07 23:41:28.887307, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:41:29.390642, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:41:29.891732, Iteration: 2
+time: 2025-09-07 23:41:29.893570, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:41:30.397525, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:41:30.898801, Connection closed
+
+Server:
+time: 2025-09-07 23:41:26.832665, Iteration: 1
+time: 2025-09-07 23:41:26.833259, sent 10 byte of X
+time: 2025-09-07 23:41:27.334476, sent 10 byte of Y
+time: 2025-09-07 23:41:27.835712, Iteration: 2
+time: 2025-09-07 23:41:28.885270, Iteration: 1
+time: 2025-09-07 23:41:28.885596, sent 10 byte of X
+time: 2025-09-07 23:41:29.386690, sent 10 byte of Y
+time: 2025-09-07 23:41:29.888730, Iteration: 2
+time: 2025-09-07 23:41:29.889389, sent 10 byte of X
+time: 2025-09-07 23:41:30.393003, sent 10 byte of Y
+Completed iteration 11 for mode 4 with msg size 10 at 20250907-234124
+----------------------------------------
+Starting iteration 12 for mode 4 with msg size 10 at 20250907-234133
+Results extracted:
+Name: Start test ./logs_obfs4_iat2/mode4_size10.log --no-socks --mode 4 --send-size 10 --num-messages 2 
+	Frames: 335
+	Client got: 40 over 0 messages,  sent 0
+	Server got: 0, over 0 messages, sent 60
+	Terminated by RST: SERVERPROXY -> MITM
+
+
+clientProxyMITM:
+Starting MITM: 31000 -> 31001
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31000), raddr=('127.0.0.1', 34200)>
+Connected to: 127.0.0.1, 31001 using ephemeral port 35898
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 35898 Timestamp: 2025-09-07 23:41:37.321252
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 35898 Timestamp: 2025-09-07 23:41:37.824993
+<- (10) byte b'XXXXXXXXXX' Source Port: 31000 Target Port: 35898 Timestamp: 2025-09-07 23:41:38.327667
+<- (10) byte b'YYYYYYYYYY' Source Port: 31000 Target Port: 35898 Timestamp: 2025-09-07 23:41:38.829604
+-> (0) byte b'' Source Port: 31000 Target Port: 35898 Timestamp: 2025-09-07 23:41:39.331667
+Connection closed from (apparently) out
+
+mainMITM:
+Starting MITM: 31002 -> 10086
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 56600)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 59788
+-> (2282) byte  Source Port: 31002 Target Port: 59788 Timestamp: 2025-09-07 23:41:35.266907
+<- (7949) byte  Source Port: 31002 Target Port: 59788 Timestamp: 2025-09-07 23:41:35.267441
+-> (0) byte b'' Source Port: 31002 Target Port: 59788 Timestamp: 2025-09-07 23:41:35.268010
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31002), raddr=('127.0.0.1', 56606)>
+Connected to: 127.0.0.1, 10086 using ephemeral port 59802
+-> (6839) byte  Source Port: 31002 Target Port: 59802 Timestamp: 2025-09-07 23:41:37.318001
+<- (7826) byte  Source Port: 31002 Target Port: 59802 Timestamp: 2025-09-07 23:41:37.319003
+<- (686) byte  Source Port: 31002 Target Port: 59802 Timestamp: 2025-09-07 23:41:37.320544
+<- (1245) byte  Source Port: 31002 Target Port: 59802 Timestamp: 2025-09-07 23:41:37.823557
+<- (148) byte  Source Port: 31002 Target Port: 59802 Timestamp: 2025-09-07 23:41:38.325924
+<- (118) byte  Source Port: 31002 Target Port: 59802 Timestamp: 2025-09-07 23:41:38.827937
+<- (0) byte b'' Source Port: 31002 Target Port: 59802 Timestamp: 2025-09-07 23:41:39.331251
+Connection closed from (apparently) in
+
+serverProxyMITM:
+Starting MITM: 31003 -> 31004
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 49186)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 59634
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 59634 Timestamp: 2025-09-07 23:41:35.268324
+-> (0) byte b'' Source Port: 31003 Target Port: 59634 Timestamp: 2025-09-07 23:41:35.268398
+Connection closed from (apparently) out
+Received connection: <socket.socket fd=4, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('127.0.0.1', 31003), raddr=('127.0.0.1', 49188)>
+Connected to: 127.0.0.1, 31004 using ephemeral port 59642
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 59642 Timestamp: 2025-09-07 23:41:37.320175
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 59642 Timestamp: 2025-09-07 23:41:37.821282
+<- (10) byte b'XXXXXXXXXX' Source Port: 31003 Target Port: 59642 Timestamp: 2025-09-07 23:41:38.324932
+<- (10) byte b'YYYYYYYYYY' Source Port: 31003 Target Port: 59642 Timestamp: 2025-09-07 23:41:38.826669
+<- (0) byte b'' Source Port: 31003 Target Port: 59642 Timestamp: 2025-09-07 23:41:39.329310
+Connection closed from (apparently) in
+
+Client:
+time: 2025-09-07 23:41:37.314861, Mode 4 - start experiment
+time: 2025-09-07 23:41:37.315017, Iteration: 1
+time: 2025-09-07 23:41:37.321481, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:41:37.826167, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:41:38.327281, Iteration: 2
+time: 2025-09-07 23:41:38.328356, Received 1st 10 bytes, last byte content: 88
+time: 2025-09-07 23:41:38.830397, Received 2nd 10 bytes, last byte content: 89
+time: 2025-09-07 23:41:39.331625, Connection closed
+
+Server:
+time: 2025-09-07 23:41:35.268208, Iteration: 1
+time: 2025-09-07 23:41:35.269099, sent 10 byte of X
+time: 2025-09-07 23:41:35.770503, sent 10 byte of Y
+time: 2025-09-07 23:41:36.276712, Iteration: 2
+time: 2025-09-07 23:41:37.319962, Iteration: 1
+time: 2025-09-07 23:41:37.320124, sent 10 byte of X
+time: 2025-09-07 23:41:37.821562, sent 10 byte of Y
+time: 2025-09-07 23:41:38.324338, Iteration: 2
+time: 2025-09-07 23:41:38.324902, sent 10 byte of X
+time: 2025-09-07 23:41:38.826839, sent 10 byte of Y
+Completed iteration 12 for mode 4 with msg size 10 at 20250907-234133
 ----------------------------------------
