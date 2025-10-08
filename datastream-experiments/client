@@ -97,7 +97,6 @@ elif args.mode == 3:
             time.sleep(0.5)
     except socket.timeout:
         log("Receive timeout waiting for server")
-    time.sleep(0.5)
     for i in range(args.nm):
         log(f"Iteration: {i+1}")
         conn.send(b'B' * args.size)
