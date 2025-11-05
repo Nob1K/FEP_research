@@ -30,11 +30,10 @@ echo Starting test
 log_file=$1
 shift
 
-echo Starting server
-#listens on port 31004
-./server "$@" &
+echo Starting https proxy
+proxy --hostname 127.0.0.1 --port 31004 &
 echo Starting servermitm
-#passes serverProxy (31003) -> Server (31004)
+#passes serverProxy (31003) -> https proxy (31004)
 python3 mitm.py -i 31003 -o 31004 -F serverProxyMITM.txt &
 echo Starting serverproxy
 #should be configured to listen on port 10086, and connect to 31003 (if needed, typically determined by the client)
@@ -61,7 +60,7 @@ python3 mitm.py -i 31000 -o 31001 -F clientProxyMITM.txt &
 sleep 2
 #waiting for mitms to spin up
 echo Spawning client
-./client "$@"
+python3 pw_client.py "$@"
 sleep 2
 
 echo "Results extracted:" >> $log_file
