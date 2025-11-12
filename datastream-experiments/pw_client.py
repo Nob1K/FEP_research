@@ -7,6 +7,11 @@ SITES = [
     "https://www.google.com"
 ]
 
+def log(string):
+    with open("client.txt", "w") as f:
+        f.write(string)
+
+
 def pause(min_s=0.4, max_s=1.2):
     time.sleep(random.uniform(min_s, max_s))
 
@@ -56,11 +61,13 @@ if __name__ == "__main__":
             for url in SITES:
                 try:
                     visit(url, page)
-                    results.append({"url": url, "status": "ok"})
+                    log(f"sucessful visit to {url}")
+                    # results.append({"url": url, "status": "ok"})
                 except Exception as e:
-                    results.append({"url": url, "status": "error", "error": str(e)})
-            with open("playwright_minimal_result.json", "w") as f:
-                json.dump(results, f, indent=2)
+                    log(f"something went wrong when visiting {url}, error {str(e)}")
+                    # results.append({"url": url, "status": "error", "error": str(e)})
+            # with open("playwright_minimal_result.json", "w") as f:
+            #     json.dump(results, f, indent=2)
 
             page.close()
             context.close()

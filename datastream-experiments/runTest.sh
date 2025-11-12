@@ -64,7 +64,7 @@ python3 pw_client.py "$@"
 sleep 2
 
 echo "Results extracted:" >> $log_file
-python3 extractFin.py -f >> $log_file
+# python3 extractFin.py -f >> $log_file
 echo -e "\nclientProxyMITM:" >> $log_file
 cat clientProxyMITM.txt >> $log_file
 echo -e "\nmainMITM:" >> $log_file
@@ -73,8 +73,7 @@ echo -e "\nserverProxyMITM:" >> $log_file
 cat serverProxyMITM.txt >> $log_file
 echo -e "\nClient:" >> $log_file
 cat client.txt >> $log_file
-echo -e "\nServer:" >> $log_file
-cat server.txt >> $log_file
+
 
 for file in *.txt; do
   [ "$file" != "tshark.txt" ] && rm "$file"
