@@ -75,6 +75,6 @@ echo -e "\nClient:" >> $log_file
 cat client.txt >> $log_file
 
 
-for file in *.txt; do
-  [ "$file" != "tshark.txt" ] && rm "$file"
-done
+# for file in *.txt; do
+#   [ "$file" != "tshark.txt" ] && rm "$file"
+# done

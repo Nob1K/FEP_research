@@ -61,10 +61,10 @@ if __name__ == "__main__":
             for url in SITES:
                 try:
                     visit(url, page)
-                    log(f"sucessful visit to {url}")
+                    log(f"sucessful visit to {url}\n")
                     # results.append({"url": url, "status": "ok"})
                 except Exception as e:
-                    log(f"something went wrong when visiting {url}, error {str(e)}")
+                    log(f"something went wrong when visiting {url}, error {str(e)}\n")
                     # results.append({"url": url, "status": "error", "error": str(e)})
             # with open("playwright_minimal_result.json", "w") as f:
             #     json.dump(results, f, indent=2)
